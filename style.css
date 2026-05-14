@@ -182,7 +182,7 @@ h6 {
     font-size: 1.3em;
     font-weight: 100;
     text-transform: lowercase;
-    margin: 0 30px 30px 20px;
+    margin: 0 18svw 10svw 3svw ;
 }
 
 span {
@@ -270,7 +270,12 @@ main {
 }   
 
 figure {
-    margin: 0 20px;
+    margin: 0 3svw;
+}
+
+figcaption {
+        margin: 0 11svw 0 0;
+
 }
 
 /* ————————————— castom class ————————————— */
@@ -483,7 +488,14 @@ figure {
     width: 80vw;
     align-self: flex-end;    
     /* z-index: 0; */
-    margin-top: -10px;
+    margin-top: -5px;
+}
+
+.decision video {
+    width: 80vw;
+    align-self: flex-end;    
+    /* z-index: 0; */
+    margin-top: -5px;
 }
 
 .face-control {
