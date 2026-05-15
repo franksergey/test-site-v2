@@ -148,6 +148,7 @@ h3 {
 }
 
 
+
 .timeline::before {
     content: "";
     position: absolute;
@@ -158,15 +159,17 @@ h3 {
     background: black;
 }
 
-/* .content {
-    position: relative;
-    z-index: 2;
-    margin: 0;
-    padding: 12px 0;
-} */
-
 .timeline h6 {  
     margin: 0 0 3svw;
+}
+
+.timeline-final {
+    z-index: 2;
+    margin: 0;
+    background: #FC709C;
+    padding: 0 0 2svw;
+    text-align: center;
+    height: auto;
 }
 
 .timeline .text-center {
