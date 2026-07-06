@@ -1,58 +1,50 @@
 /* ————————————— fonts ————————————— */
-@font-face {
-    font-family: "Varp";
-    src: 
-        url("fonts/VarpVariable.woff2"), format(truetype-variation);
-        font-display: swap; 
+@font-face  {
+    font-family:    "Varp";
+    src:
+        url("fonts/VarpVariable.woff2"),    format(truetype-variation);
+        font-display:   swap; 
 }
 
-@font-face {
-    font-family: "Inter";
-    src: url("https://fonts.googleapis.com/css2?family=Inter&display=swap") format("woff2");
-    font-display: swap; 
-    font-weight: 100;
-
+@font-face  {
+    font-family:    "Inter";
+    src:    url("https://fonts.googleapis.com/css2?family=Inter&display=swap")  format("woff2");
+    font-display:   swap;
+    font-weight:    100;
 }
 
-p {
-    /* font-family: "Inter"; */
-    font-size: 1em;
-    /* text-transform: lowercase; */
-    margin: 0;
+p   {
+    font-size:  1em;
+    margin:     0;
 }
 
-hgroup p {
-    margin: 6svw 0;
+hgroup  p    {
+    /* margin:     6svw    0; */
 }
 
 
 
-.p-frame {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    border: 2px solid;
-    padding: 20px;
-    margin: 40px 20px 0 20px;
+.p-frame    {
+    text-align:     center;
+    display:        flex;
+    align-items:    center;
+    border:         2px solid;
+    padding:        20px;
+    margin:         40px    20px    0   20px;
 }
 
 .p-accent-2 {
-    font-family: "Varp";
-    font-variation-settings: "slnt" 0, "wdth" 30;
-    font-weight: normal;
-    font-size: 5em;
+    font-family:    "Varp";
+    font-variation-settings:    "slnt"  0,  "wdth"  30;
+    font-weight:    normal;
+    font-size:      5em;
     text-transform: uppercase;
-    margin: 0;
-
-
+    margin:         0;
 }
 
-.p-accent {
-
-
-    position: absolute;
-
-    opacity: 0;
+.p-accent   {
+    position:   absolute;
+    opacity:    0;
 
     text-align: center;
 
@@ -76,10 +68,7 @@ hgroup p {
 
 
 
-.space hgroup {
-    text-align: left;
-    margin: 0 20px;
-}
+
 
 h1 {
     font-size: 3em;
@@ -87,9 +76,9 @@ h1 {
 
 h2 {
     font-family: "Varp";
-    font-size: 40vw;
+    font-size: 33vw;
     font-weight: normal;
-    text-align: center;
+    /* text-align: center; */
     font-variation-settings: "slnt" 0, "wdth" 6;
     text-transform: uppercase;
     margin: 0;
@@ -184,7 +173,7 @@ h3 {
 
 h4 {
     font-family: "Varp";
-    font-size: 4.5em;
+    font-size: 4em;
     font-weight: normal;
     /* text-align: center; */
     font-variation-settings: "slnt" 30, "wdth" 55;
@@ -213,7 +202,7 @@ h5 {
 
 
 h6 {
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: normal;
     /* text-align: center; */
     text-transform: uppercase;
@@ -236,12 +225,7 @@ h6 {
     -webkit-box-decoration-break: clone; */
 }
 
-.cover-text {
-    font-size: 1.3em;
-    font-weight: 100;
-    text-transform: lowercase;
-    margin: 0 18svw 10svw 3svw ;
-}
+
 
 span {
     font-family: "Varp";
@@ -336,6 +320,155 @@ figcaption {
 
 }
 
+section {
+    width: 100svw;
+}
+
+button {
+    border: none !important;
+    width: 100%;
+    padding: 10px 20px; 
+    border-radius: 100px;
+    text-wrap: nowrap;
+
+
+    font-size: 1em; 
+    background-color: transparent;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+button[data-tc-event] {
+
+    border: none !important;
+    padding: 0 20px !important; 
+    border-radius: 100px !important;
+
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1em !important; 
+    background-color: black !important;
+    text-transform: none !important;
+    border: 1px solid black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+
+
+}
+
+
+footer {
+    color: white;
+    background-color: black;
+    padding: 12svw 6svw 24svw 6svw;
+    display: flex;
+    flex-direction: column;
+    gap: 15svw;
+
+    @media  (min-width: 900px)  {
+        padding: 6svw 6svw 12svw 6svw;   
+        display: flex;
+        flex-direction: row;
+    }
+
+    & p {
+        width: 80%;
+        font-size: 0.9em;
+        color: rgba(255, 255, 255, 0.7);
+
+        @media  (min-width: 900px)  {
+            width: 100%;
+            font-size: 1.5em;
+        }
+    }
+
+    & .logo {
+        width: 8em;
+        margin: 0 0 2svw 0;
+    }
+
+    & a {
+        text-decoration: underline;
+        text-wrap: nowrap;
+        display: inline;
+        padding: 0;
+
+        color: white;
+    }
+
+    & div {
+        display: flex;
+        flex-direction: column;
+        gap: 15svw;
+
+        & p {
+            @media  (min-width: 900px)  {
+                font-size: 1em;
+            }
+        }
+
+        @media  (min-width: 900px)  {
+            gap: 5svw;
+        }
+    }
+
+    & hgroup {
+        @media  (min-width: 900px)  {
+            width: 25%;
+        }    
+    }
+}
+
+.footer-link {
+    width: fit-content;
+    display: inline-block;
+    padding: 5px 10px;     
+    border-radius: 100px;
+    text-wrap: nowrap;
+    text-decoration: none;
+
+
+    background-color: transparent;
+    border: 1px solid white; 
+    margin: 2svw 0 0 0;  
+
+    @media  (min-width: 900px)  {
+        margin: 0.5svw 0 0 0;
+    }
+}
+
+
+.cover button {
+    color: #ffffff;
+    border: 1px solid white;
+}
+
+.button-sticky {
+    position:   fixed;
+    width:      88svw;
+    bottom:     0;
+    color:    white;
+    background-color: black;
+    margin:     3svw    6svw;
+    z-index:    3;
+
+    transform:  translateY(120px);
+    opacity:    0;
+
+    transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+}
+
+.button-sticky.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
 /* ————————————— castom class ————————————— */
 
 .hide {
@@ -346,10 +479,18 @@ figcaption {
     width: 6.3em;
 }
 
-.schedule svg {
-    display: block;
-    margin: 50px 20px 0 20px ;
-    /* width: 85vw; */
+.schedule {
+
+    & p {
+        padding: 0 3svw;
+    }
+
+
+    & svg {
+        display: block;
+        padding: 0 3svw 5svw 3svw ;
+        width: 98%;
+    }
 }  
 
 /* .kodex {
@@ -386,11 +527,18 @@ figcaption {
     background-size:    160vw;
     background-position: 140px 0;
     background-repeat:  no-repeat; 
+
+    & h2 {
+        font-size: 40svw;
+        text-align: center;
+        z-index: 1;
+
+        @media  (min-width: 900px)  {  
+            font-size:   18vw;  
+        }
+    }
 }
 
-.kodex h2 {
-    z-index: 1;
-}
 
 /* .kodex svg {
     /* position: absolute; 
@@ -402,12 +550,48 @@ figcaption {
 
 .project-history {
     background-color: #ffffff;
-    padding: 40px;
+    padding: 35svw 6svw 35svw 6svw;
+
+    & hgroup {
+        @media  (min-width: 900px)  {  
+            display:        flex;
+            width:          40%;
+            flex-direction: column;
+            margin:         auto;
+        }
+ 
+    }
+    & h5 {
+        margin: 20svw 0 7svw 0;
+
+        @media  (min-width: 900px)  {  
+            margin: 200px   0   2svw    0;
+        }
+    }
+
+    & p {
+        margin: 4svw   0;
+
+
+        @media  (min-width: 900px)  {  
+            margin: 1svw   0;
+        }
+    }
+
+    @media  (min-width: 900px)  {  
+        padding: 0 0 15svw 0;
+    }
 }
 
-.project-history h5 {
+/* .project-history h5 {
     margin: 200px 0 0 0;
-}
+} */
+
+
+    /* .project-history    p  {
+        margin: 1svw   0;
+    } */
+
 
 
 .logo-130 {
@@ -439,7 +623,7 @@ figcaption {
 
 }
 .ritm-130 .text-center {
-    margin: 73svw 50px 0 50px;
+    margin: 96svw 50px 0 50px;
     color: black;
 }
 
@@ -454,18 +638,11 @@ figcaption {
     /* height: 100vh; */
 }
 
-.space {
-    background-image:   url("media/ellipse.svg");
-    background-size:    200vw;
-    background-position: -100vw 100px;
-    background-repeat:  no-repeat; 
-}
 
 
-.space img {
-    width: 90svw;
-    margin: 10px;
-}
+
+
+
 
 /* ————————————— margins ————————————— */
 .margin-200 {
@@ -490,14 +667,27 @@ figcaption {
     position: relative;
     z-index: 1;
 
+    padding: 0 3svw 3svw 3svw;
+    gap: 3svw;
+
     height: 100svh;
     width: 100%;
-    background-image: url("media/cover-background-image.png");
+    background-image: url("media/cover-background-image.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: white;
 }
+
+.cover h6{
+    font-size: 1.3em;
+    font-weight: 100;
+    text-transform: lowercase;
+    margin: 0 0 3svw 0;
+    /* margin: 0 18svw 10svw 3svw ; */
+}
+
+
 
 .cover::after {
     content: "";
@@ -513,8 +703,10 @@ figcaption {
         transparent 25%);
 }
 
+
+
 .client-pain {
-    height: 350vh;
+    height: 250vh;
 
     background: linear-gradient(
         to bottom,
@@ -556,13 +748,11 @@ figcaption {
     margin-top: -5px;
 }
 
-.face-control {
- margin: 150px 0;
-}
+
 
 .background {
-    /* display: block;
-    position: absolute; */
+    display: none;
+    /* position: absolute; */
 
     position: relative;
 
@@ -575,7 +765,7 @@ figcaption {
 }   
 
 .background-mobile {
-    display: none;
+    display: block;
     /* position: absolute; */
 
     /* width: 100vw; */
@@ -592,7 +782,310 @@ figcaption {
     height: 100%;
 }
 
+.hgroup-padding {
+    padding: 5svw 3svw;
 
+    & p {
+        width: 90%;
+        margin: 8svw 0;
+
+        @media (min-width: 900px) {  
+            width: 40%;
+            margin: 3svw 0;  
+        }
+    }
+}
+
+/* .cover-2 {
+    height: 100svh;
+    padding: 20svw 0;
+
+    & h2 {
+        font-size: 32vw;
+        text-align: left;
+        padding: 5svw;
+    }
+
+    @media (min-width: 900px) {  
+        margin: 10svw 0;
+
+        & hgroup {
+            margin: 0 20svw;
+        }
+    }
+} */
+
+.face-control {
+ margin: 150px 0;
+    & .p-frame{
+        text-align: left;
+        flex-direction: column;
+        gap: 1em;
+
+        @media  (min-width: 900px)  {  
+            margin: 4svw 32svw;
+            flex-direction: row;
+            align-items: baseline;
+        }
+    }
+ 
+}
+
+.space {
+    /* background-image:   url("media/ellipse.svg");
+    background-size:    200vw;
+    background-position: -100vw 78svw;
+    background-repeat:  no-repeat; */
+    position: relative;
+
+    /* & img {
+        width: 90svw;
+        margin: 2svw 0 10svw 2svw;
+
+        @media  (min-width: 900px)  {   
+        margin: 2svw;
+        }
+    } */
+
+    /* display: flex; */
+
+    /* --gap: 1em;
+    --columns: 1;
+    --gap-number: calc(var(--columns) - 1);
+    gap: var(--gap); */
+
+    & hgroup {
+        /* width: 80%; */
+        /* text-align: left; */
+        /* margin: 0 3svw; */
+
+        @media  (min-width: 900px)  {   
+            /* --columns: 4; */
+            /* width: calc((100% - var(--gap-number) * var(--gap)) / (var(--columns))); */
+            /* margin: 5svw; */
+            /* margin: 0svw; */
+        }
+
+        & h4 {
+            /* margin: 2svw; */
+        }
+    }
+
+    @media  (min-width: 900px)  {   
+        padding: 0 0 8svw 0
+    }
+}
+
+#collage-ellipse {
+    position: absolute;
+    width: 193svw;
+
+    top: 101svw;
+    left: -95svw;
+
+    z-index: 2;
+
+    @media  (min-width: 900px)  {   
+        width: 114svw;
+
+        top: -39svw;
+        left: -22svw;
+    }
+}
+
+#collage-photo-1 {
+    width: 60svw;
+    height: 90svw;
+    object-fit: cover;
+
+    position: relative;
+    top: 2svw;
+    left: 20svw;
+
+    @media  (min-width: 900px)  {   
+        width: 25svw;
+        height: 38svw;
+
+        top: 0svw;
+        left: 9svw;
+    }
+}
+
+#collage-photo-2 {
+    width: 48svw;
+    height: 48svw;
+    object-fit: cover;
+
+    position: relative;
+    top: -10svw;
+    left: 2svw;
+
+    z-index: 2;
+
+    @media  (min-width: 900px)  {   
+        width: 20svw;
+        height: 20svw;
+
+        top: -26svw;
+        left: 4svw;
+    }
+}
+
+#collage-photo-3 {
+    width: 60svw;
+    height: 90svw;
+    object-fit: cover;
+
+    position: relative;
+    top: -27svw;
+    left: 31svw;
+
+    @media  (min-width: 900px)  {   
+        width: 25svw;
+        height: 41svw;
+
+        top: -11svw;
+        left: 13svw;
+    }
+}
+
+#collage-photo-4 {
+    width: 74svw;
+    height: 74svw;
+    object-fit: cover;
+
+    position: relative;
+    top: -39svw;
+    left: 5svw;
+
+    z-index: 2;
+
+    @media  (min-width: 900px)  {   
+        width: 22svw;
+        height: 22svw;
+
+        top: 7svw;
+        left: 0svw;
+    }
+}
+
+
+
+
+.headliners {  
+    display: flex;
+    flex-wrap: wrap;         
+    padding: 0;
+
+    --gap: 1em;
+    --columns: 1;
+    --gap-number: calc(var(--columns) - 1);
+    gap: var(--gap);
+
+    background-image:   url("media/ellipse.svg");
+    background-size:    0;
+    background-position: -100vw 100px;
+    background-repeat:  no-repeat; 
+
+    & .empty {
+        display: none;
+
+        @media  (min-width: 900px)  {   
+            display: block;
+        }
+    }
+
+    & figure {
+        width: calc((100% - var(--gap-number) * var(--gap)) / (var(--columns)));
+        margin: 0;
+
+        & img {
+            width: 100%;
+            height: 105svw;
+            object-fit: cover;
+        }
+
+        @media  (min-width: 900px)  {   
+            & img {
+                height: 30svw;
+            }
+        }
+
+        & figcaption {
+            padding: 3svw 3svw 11svw;
+            
+            & h6 {
+                margin: 0 0 2svw 0;
+                @media  (min-width: 900px)  {
+                margin: 0 0 0.5svw 0;
+                }
+
+            }
+            @media  (min-width: 900px)  {   
+            padding: 0;
+            }
+        } 
+    }
+
+    @media  (min-width: 900px)  {   
+     --columns: 4;
+    padding: 2svw;
+
+    background-image:   url("media/ellipse.svg");
+    background-size:    84vw;
+    background-position: 56vw 0;
+    background-repeat:  no-repeat; 
+
+        & .empty {
+            display: block;
+        }
+    }
+}
+
+
+.diving {
+    margin:         20svw    0;
+
+    @media  (min-width: 900px)  {   
+        display:        flex;
+        width:          60%;
+        flex-direction: column;
+        margin:         18svw    auto;
+    }
+}
+
+.ritm-130-2 {
+    position: relative;
+
+    height: 120svh;
+    width: 100%;
+    background-image: url("media/ritm-130-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+
+    & svg {
+        width: 35svw;
+        
+        position: absolute;
+        top: 15svw;
+        right: 10svw;
+
+        z-index: 2;
+
+        @media  (min-width: 900px)  {   
+            width: 10svw;
+        }
+    }
+
+    & p {
+        text-align: center;
+        position: absolute;
+        bottom: 0svw;
+        margin: 10svw;
+    }
+}
 
 /* ——————— line animation (mobile) ——————— */
 
@@ -697,25 +1190,196 @@ input:focus-visible {
 
 /* ————————————— adaptive version ————————————— */
 
-@media (max-width: 900px) {
-
-    main {
-        /* margin: 0; 
-        width: 100%;
-        height: 122vh; */
+@media  (min-width: 900px)  {
+    .logo   {
+        width:      11.6em;
     }
 
-    header {
-        /* width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        padding: 20px 20px 0 0; */
+    .cover-text {
+        font-size:  2.5em;
+        margin:     0   51svw   2svw    2svw;
+        letter-spacing: 3%;
+
+
     }
 
-    .logo {
-        /* width: 25vw; */
+    header  {
+        padding:    1svw;
+    }
+
+    h2  {
+       font-size:   18vw; 
+    }
+
+    h4  {
+        /* font-size:  12.5em; */
+        font-size: 10.5svw;
+    }
+
+    h5  {
+        font-size:  5em;
+    }
+
+    h6  {
+        font-size:  1.7em;
+    }
+
+    .decision   video {
+        width:      40vw;
+        margin-top: -40svw;
+
+    }  
+
+    .decision   {
+        padding:                100px   0   12svw   0;
+        background-size:        84vw;
+        background-position:    -10svw  0svw;
+    }
+
+    .decision h5    {
+        margin:     0   0   0   2svw;
+        width:      50%;
+    }
+
+    .p-frame    {
+        justify-content:    center;
+    }
+
+
+    .cover  {
+        padding:     0   3svw    4svw    3svw;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+
+    .schedule {
+        display:            flex;
+        flex-direction:     column;
+        justify-content:    space-between;
+        align-items:        center;    
+    }
+
+    .schedule svg {
+        width: 40svw;
+    }
+
+    .background { 
+       display: block; 
+    }
+
+    .background-mobile { 
+       display: none; 
     }
     
+
+    .button-sticky  {
+        width:  fit-content;
+        top:    2svw;
+        right:  2svw;
+        bottom: auto;
+        margin: 0;
+
+        font-size:  1.5em;
+
+        transform: translateY(-120px);
+    }
+
+    .cover  button  {
+        width:      fit-content;
+        font-size:  1.5em;
+    }
+
+    .cover  h6  {
+        font-size:  2em;
+        margin:     0   0   1svw    0;
+        /* width: ; */
+    }
+
+
+
+
+/* 
+    hgroup  p   {
+        margin: 0;
+    } */
+
+    .timeline   {
+        gap:    30svw;
+    }
+
+    .timeline   hgroup  {
+        grid-template-columns:  7svw    0.7fr;
+    }
+
+    .timeline::before   {
+        left:   6.5svw;
+    }
+
+    .timeline   h6  {
+        margin: 0 0 1.2svw;
+    }
+
+    figcaption  {
+        font-size:  1.5em;
+        margin:     1svw    0;
+    }
+
+    #sticker-1  {
+        width:      26svw;
+        left:       6svw;
+        margin-top: -5svw;
+    }
+
+    #sticker-2  {
+        width:      23svw;
+        right:      8svw;
+        margin-top: 24svw;
+    }
+
+    .kodex  {
+        height:                 87svw;
+        padding:                15svw   0   80px    0;
+        background-size:        87vw;
+        background-position:    53.5svw 0;
+    }
+
+    .ritm-130   {
+        background-size:    65em;
+        background-repeat:  repeat-x;
+        padding:            12svw   10px;
+    }
+
+    .p-accent-2 {
+        width: 25%;
+    }
+
+    .ritm-130   .text-center    {
+        margin: 28svw   50px    0   50px;
+    }
+
+
+
+
+
+
+}
+
+
+
+
+@media (min-width: 500px) and (max-width: 900px) {
+    .email-form {
+        width: 350px;
+        margin: 0 auto 15px auto; 
+    }
+
+
+    
+}
+
+@media (max-width: 900px) {
     .email-form {
         width: auto;
         margin: 0 15px 15px 15px; 
@@ -735,117 +1399,7 @@ input:focus-visible {
         font-size: 1em; 
     }
 
-    .background { 
-       display: none; 
-    }
 
-    .background-mobile { 
-       display: block; 
-    }
-
-    canvas {
-        display: none;
-    }
-}
-
-@media (min-width: 900px) {
-    .logo {
-        width: 11.6em;
-    }
-
-    .cover {
-            /* flex-direction: column-reverse; */
-            /* background-position: 0 -16svw; */
-
-    }
-    .cover-text {
-        font-size: 2.5em;
-        margin: 0 51svw 2svw 2svw;
-        letter-spacing: 3%;
-
-
-    }
-
-    header {
-        padding: 1svw;
-    }
-
-    h2 {
-       font-size: 18vw; 
-    }
-
-    h4 {
-        font-size: 12.5em;
-    }
-
-    h5 {
-        font-size: 7em;
-    }
-
-    h6 {
-            font-size: 1.9em;
-    }
-
-    .decision video {
-        width: 40vw;
-        margin-top: -46svw;
-
-    }  
-
-    .decision {
-        padding: 100px 0 12svw 0;
-    }
-
-    .decision h5 {
-    margin: 0 26svw 0 2svw;
-    }
-
-    .p-frame {
-        justify-content: center;
-    }
-
-    .cover-2 hgroup {
-        margin: 0 20svw;
-    }
-
-    p {
-        font-size: 2em;
-    }
-
-    .schedule {
-
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0 10svw;
-
-    }
-
-    .schedule svg {
-        width: 40svw;
-    }
-}
-
-
-
-
-
-
-
-@media (min-width: 1500px) {
- 
-}
-
-@media (min-width: 500px) and (max-width: 900px) {
-    .email-form {
-        width: 350px;
-        margin: 0 auto 15px auto; 
-    }
-
-    main {
-        /* height: 128vh; */
-    }
-    
 }
 
 
@@ -854,3 +1408,11 @@ input:focus-visible {
 
 /* ————————————— archive ————————————— */
 
+/* @media (min-width: 1500px) {
+ 
+} */
+
+    /* .cover  {
+        flex-direction: column-reverse;
+        background-position: 0 -16svw;
+    } */
