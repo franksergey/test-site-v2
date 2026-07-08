@@ -33,38 +33,7 @@ hgroup  p    {
     margin:         40px    20px    0   20px;
 }
 
-.p-accent-2 {
-    font-family:    "Varp";
-    font-variation-settings:    "slnt"  0,  "wdth"  30;
-    font-weight:    normal;
-    font-size:      5em;
-    text-transform: uppercase;
-    margin:         0;
-}
 
-.p-accent   {
-    position:   absolute;
-    opacity:    0;
-
-    text-align: center;
-
-    transition:
-        opacity 0.4s ease,
-        transform 0.4s ease;
-
-    transform: translateY(20px);
-}
-
-.p-accent.p-active {
-    opacity: 1;
-    transform: translateY(-50px);
-}
-
-/* .aside {
-    position: absolute;
-    margin: 0 0 0 20px;
-    left: 0;
-} */
 
 
 
@@ -249,7 +218,7 @@ a:hover {
 
 /* ————————————— scroll animation ————————————— */
 
-.sticky {
+/* .sticky {
     position: sticky;
     top: 0;
 
@@ -260,7 +229,7 @@ a:hover {
     justify-content: center;
 
     overflow: hidden;
-}
+} */
 
 
 
@@ -320,9 +289,9 @@ figcaption {
 
 }
 
-section {
+/* section {
     width: 100svw;
-}
+} */
 
 button {
     border: none !important;
@@ -337,6 +306,8 @@ button {
     border: 1px solid black;
     cursor: pointer;
 }
+
+/* принудительное изменение дефолтной кнопки ticketscloud */
 
 button[data-tc-event] {
 
@@ -437,10 +408,7 @@ footer {
 }
 
 
-.cover button {
-    color: #ffffff;
-    border: 1px solid white;
-}
+
 
 .button-sticky {
     position:   fixed;
@@ -618,10 +586,7 @@ button:hover {
     background-repeat:  no-repeat; 
 }
 
-.ritm-130 .p-accent-2 {
-    font-size: 4em;
 
-}
 .ritm-130 .text-center {
     margin: 96svw 50px 0 50px;
     color: black;
@@ -667,40 +632,88 @@ button:hover {
     position: relative;
     z-index: 1;
 
-    padding: 0 3svw 3svw 3svw;
-    gap: 3svw;
+    padding: 3svw 3svw 6svw 3svw;
 
     height: 100svh;
-    width: 100%;
     background-image: url("media/cover-background-image.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: white;
+
+    @media (min-width: 900px) {  
+        padding: 0 3svw 4svw 3svw;
+    }
+
+
+    & .logo {
+        width: 8.3em;
+    }
+
+    & p  {
+        font-size: 1.3em;
+        font-weight: 300;
+        text-transform: lowercase;
+
+        @media (min-width: 900px) {  
+            font-size:  1.7em;
+        }
+    }
+
+    & button {
+        color: #ffffff;
+        border: 1px solid white;
+
+        margin: 5svw 0 0 0;
+
+        @media (min-width: 900px) {
+            width: fit-content;
+            font-size: 1.5em;
+            margin: 1svw 0 0 0;
+        } 
+    }
+
+    & #slogan-mobile {
+        display: block;
+        padding: 100px 0 0 30px;
+
+        @media (min-width: 900px) {  
+            display: none; 
+        }
+    }
+
+    & #slogan {
+        display: none;
+
+        position: relative;
+        margin: 7svw 0 0 5svw;
+        
+        width: 90vw;
+        color: white;
+        z-index: -1;
+
+        @media (min-width: 900px) {  
+            display: block; 
+        }
+    } 
+
 }
 
-.cover h6{
-    font-size: 1.3em;
-    font-weight: 100;
-    text-transform: lowercase;
-    margin: 0 0 3svw 0;
-    /* margin: 0 18svw 10svw 3svw ; */
-}
 
 
-
-.cover::after {
+.cover::after { /* наложение градиента на фон */
     content: "";
     position: absolute;
     left: 0;
     right: 0;
+    bottom: -2px;
     z-index: -1;
 
-    height: 100svh;
+    height: 90%;
     background: linear-gradient(
         to top,
         #FC709C,
-        transparent 25%);
+        transparent 50%);
 }
 
 
@@ -713,6 +726,52 @@ button:hover {
         #FC709C,
         #ffffff
     );
+
+    & div {
+        position: sticky;
+        top: 0;
+
+        height: 100vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+    }
+
+    & .p-accent   {
+        position: absolute;
+        opacity: 0;
+
+        text-align: center;
+
+        transition:
+            opacity 0.4s ease,
+            transform 0.4s ease;
+
+        transform: translateY(20px);
+    }
+
+    & .p-accent.p-active {
+        opacity: 1;
+        transform: translateY(-50px);
+
+        
+    }
+
+    & .p-accent-2 {
+        font-family: "Varp";
+        font-variation-settings: "slnt" 0, "wdth" 30;
+        font-weight: normal;
+        font-size: 5em;
+        text-transform: uppercase;
+        margin: 0;
+
+        @media (min-width: 900px) {
+            width: 25%;
+        }
+    }
 }
 
 .decision {
@@ -725,54 +784,36 @@ button:hover {
     background-size:    160vw;
     background-position: -140px 0;
     background-repeat:  no-repeat; 
+
+    & h5 {
+        position: relative;
+        z-index: 2;
+        margin: 0 80px 0 10px;
+
+        @media (min-width: 900px) {
+            margin: 0 0 0 2svw;
+            width: 50%;
+        }
+    }
+
+    & img {
+        width: 80vw;
+        align-self: flex-end;    
+        margin-top: -5px;
+    }
+
+    & video {
+        width: 80vw;
+        align-self: flex-end;    
+        margin-top: -5px;
+    }
 }
 
-.decision h5 {
-    margin: 0 80px 0 10px;
-
-    position: relative;
-    z-index: 2;
-}
-
-.decision img {
-    width: 80vw;
-    align-self: flex-end;    
-    /* z-index: 0; */
-    margin-top: -5px;
-}
-
-.decision video {
-    width: 80vw;
-    align-self: flex-end;    
-    /* z-index: 0; */
-    margin-top: -5px;
-}
 
 
 
-.background {
-    display: none;
-    /* position: absolute; */
+  
 
-    position: relative;
-
-    margin: 7svw 0 0 5svw;
-    
-    width: 90vw;
-    /* margin: 40px 0 0 180px; */
-    color: white;
-    z-index: -1;
-}   
-
-.background-mobile {
-    display: block;
-    /* position: absolute; */
-
-    /* width: 100vw; */
-    padding: 100px 0 0 30px;
-    /* color: white; */
-    /* z-index: -1; */
-}
 
 #background {
     position: fixed;
@@ -796,24 +837,6 @@ button:hover {
     }
 }
 
-/* .cover-2 {
-    height: 100svh;
-    padding: 20svw 0;
-
-    & h2 {
-        font-size: 32vw;
-        text-align: left;
-        padding: 5svw;
-    }
-
-    @media (min-width: 900px) {  
-        margin: 10svw 0;
-
-        & hgroup {
-            margin: 0 20svw;
-        }
-    }
-} */
 
 .face-control {
  margin: 150px 0;
@@ -1195,13 +1218,7 @@ input:focus-visible {
         width:      11.6em;
     }
 
-    .cover-text {
-        font-size:  2.5em;
-        margin:     0   51svw   2svw    2svw;
-        letter-spacing: 3%;
 
-
-    }
 
     header  {
         padding:    1svw;
@@ -1236,19 +1253,17 @@ input:focus-visible {
         background-position:    -10svw  0svw;
     }
 
-    .decision h5    {
+    /* .decision h5    {
         margin:     0   0   0   2svw;
         width:      50%;
-    }
+    } */
 
     .p-frame    {
         justify-content:    center;
     }
 
 
-    .cover  {
-        padding:     0   3svw    4svw    3svw;
-    }
+
 
     p {
         font-size: 1.5em;
@@ -1264,14 +1279,14 @@ input:focus-visible {
     .schedule svg {
         width: 40svw;
     }
-
+/* 
     .background { 
        display: block; 
-    }
+    } */
 
-    .background-mobile { 
+    /* .background-mobile { 
        display: none; 
-    }
+    } */
     
 
     .button-sticky  {
@@ -1286,16 +1301,6 @@ input:focus-visible {
         transform: translateY(-120px);
     }
 
-    .cover  button  {
-        width:      fit-content;
-        font-size:  1.5em;
-    }
-
-    .cover  h6  {
-        font-size:  2em;
-        margin:     0   0   1svw    0;
-        /* width: ; */
-    }
 
 
 
@@ -1351,9 +1356,7 @@ input:focus-visible {
         padding:            12svw   10px;
     }
 
-    .p-accent-2 {
-        width: 25%;
-    }
+
 
     .ritm-130   .text-center    {
         margin: 28svw   50px    0   50px;
@@ -1416,3 +1419,110 @@ input:focus-visible {
         flex-direction: column-reverse;
         background-position: 0 -16svw;
     } */
+
+    /* .cover-2 {
+    height: 100svh;
+    padding: 20svw 0;
+
+    & h2 {
+        font-size: 32vw;
+        text-align: left;
+        padding: 5svw;
+    }
+
+    @media (min-width: 900px) {  
+        margin: 10svw 0;
+
+        & hgroup {
+            margin: 0 20svw;
+        }
+    }
+} */
+
+    /* .cover-text {
+        font-size:  2.5em;
+        margin:     0   51svw   2svw    2svw;
+        letter-spacing: 3%;
+
+
+    } */
+
+    /* .cover  button  {
+        width:      fit-content;
+        font-size:  1.5em;
+    } */
+
+    /* .cover  h6  {
+        font-size:  2em;
+        margin:     0   0   1svw    0;
+        width: ;
+    } */
+
+        /* .cover  {
+        padding:     0   3svw    4svw    3svw;
+    } */
+
+
+    /* .ritm-130 .p-accent-2 {
+    font-size: 4em;
+
+} */
+
+    /* .p-accent-2 {
+        width: 25%;
+    } */
+
+/* .p-accent-2 {
+    font-family:    "Varp";
+    font-variation-settings:    "slnt"  0,  "wdth"  30;
+    font-weight:    normal;
+    font-size:      5em;
+    text-transform: uppercase;
+    margin:         0;
+} */
+
+/* .p-accent   {
+    position:   absolute;
+    opacity:    0;
+
+    text-align: center;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+
+    transform: translateY(20px);
+} */
+
+/* .p-accent.p-active {
+    opacity: 1;
+    transform: translateY(-50px);
+} */
+
+/* .aside {
+    position: absolute;
+    margin: 0 0 0 20px;
+    left: 0;
+} */
+
+
+/* .decision h5 {
+    margin: 0 80px 0 10px;
+
+    position: relative;
+    z-index: 2;
+} */
+
+/* .decision img {
+    width: 80vw;
+    align-self: flex-end;    
+    z-index: 0;
+    margin-top: -5px;
+} */
+
+/* .decision video {
+    width: 80vw;
+    align-self: flex-end;    
+    z-index: 0;
+    margin-top: -5px;
+} */
