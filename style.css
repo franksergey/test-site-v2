@@ -13,15 +13,14 @@
     font-weight:    100;
 }
 
-p   {
-    font-size:  1em;
-    margin:     0;
-}
+p {
+    font-size: 1em;
+    margin: 0;
 
-hgroup  p    {
-    /* margin:     6svw    0; */
+    @media  (min-width: 900px)  {
+        font-size: 1.5em;
+    }
 }
-
 
 
 .p-frame    {
@@ -47,11 +46,14 @@ h2 {
     font-family: "Varp";
     font-size: 33vw;
     font-weight: normal;
-    /* text-align: center; */
     font-variation-settings: "slnt" 0, "wdth" 6;
     text-transform: uppercase;
     margin: 0;
     line-height: 90%;
+
+    @media  (min-width: 900px)  {
+       font-size: 18vw; 
+    }
 }
 
 h3 {
@@ -88,55 +90,13 @@ h3 {
 }
 
 
-.timeline {
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    gap: 50svw;
-    padding: 0 3svw;
-}
-
-.timeline hgroup {
-    /* margin: 10vw 5vw 70vw 25vw; */
-    display: grid;
-    grid-template-columns: 16svw  1fr;
-    gap: 3svw;
-
-}
 
 
 
-.timeline::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 10svw;
-    width: 1.2px;
-    background: black;
-}
 
-.timeline h6 {  
-    margin: 0 0 3svw;
-}
 
-.timeline-final {
-    z-index: 2;
-    margin: 0;
-    background: #FC709C;
-    padding: 0 0 2svw;
-    text-align: center;
-    height: auto;
-}
 
-.timeline .text-center {
-    z-index: 2;
-    margin: 0;
-    background: #FC709C;
-    height: fit-content;
-    padding: 0 0 2svw;
-}
+
 
 
 
@@ -144,12 +104,15 @@ h4 {
     font-family: "Varp";
     font-size: 4em;
     font-weight: normal;
-    /* text-align: center; */
     font-variation-settings: "slnt" 30, "wdth" 55;
     text-transform: uppercase;
     margin: 0;
     line-height: 90%;
     letter-spacing: -3%;
+
+    @media  (min-width: 900px)  {
+        font-size: 10.5svw;
+    }
 }
 
 .h4-inverce {
@@ -173,10 +136,12 @@ h5 {
 h6 {
     font-size: 1.2em;
     font-weight: normal;
-    /* text-align: center; */
     text-transform: uppercase;
     margin: 0;
-    /* color: white; */
+
+    @media  (min-width: 900px)  {
+      font-size:  1.7em;
+    }
 
 }
 
@@ -307,9 +272,10 @@ button {
     cursor: pointer;
 }
 
-/* принудительное изменение дефолтной кнопки ticketscloud */
 
-button[data-tc-event] {
+
+button[data-tc-event] { 
+    /* принудительное изменение дефолтной кнопки ticketscloud */
 
     border: none !important;
     padding: 0 20px !important; 
@@ -322,8 +288,6 @@ button[data-tc-event] {
     border: 1px solid black !important;
     box-shadow: none !important;
     text-shadow: none !important;
-
-
 }
 
 
@@ -422,10 +386,22 @@ footer {
     transform:  translateY(120px);
     opacity:    0;
 
-    transition:
-        transform 0.5s ease,
-        opacity 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+    @media  (min-width: 900px)  {
+        width:  fit-content;
+        top:    2svw;
+        right:  2svw;
+        bottom: auto;
+        margin: 0;
+
+        font-size:  1.5em;
+
+        transform: translateY(-120px);
+    }
 }
+
+
 
 .button-sticky.visible {
     transform: translateY(0);
@@ -445,44 +421,58 @@ button:hover {
 
 .logo {
     width: 6.3em;
+
+    @media  (min-width: 900px)  {  
+        width: 11.6em;
+    }
 }
+
 
 .schedule {
 
-    & p {
-        padding: 0 3svw;
+    & div {
+        @media  (min-width: 900px)  {  
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start; 
+            
+            & :last-child {
+                margin: 3.8svw 0 0 0;
+            }
+        }
     }
 
+
+
+    & p {
+        padding: 0 3svw;
+
+        @media  (min-width: 900px)  {  
+            width: 40svw;
+        }
+    }
+
+    & h4 {
+        padding: 5svw 8svw;
+        text-align: end;
+
+        @media  (min-width: 900px)  {  
+            padding: 5svw 5svw 0 3svw;
+        }
+    }
 
     & svg {
         display: block;
         padding: 0 3svw 5svw 3svw ;
         width: 98%;
+
+        @media  (min-width: 900px)  {  
+            width: 40svw;
+        }
     }
 }  
 
-/* .kodex {
-    /* height: 100vh;
-    /* background-color: #ffffff; 
-    padding: 40px 0;
-} */
-
-#sticker-1 {
-    position: absolute;
-    width: 40svw;
-    left: 3svw;
-    margin-top: -19svw;
-    z-index: 2;
-}
-
-#sticker-2 {
-    position: absolute;
-    width: 40svw;
-    right: 6svw;
-    align-self: flex-end;    
-    margin-top: 111svw;
-    z-index: 0;
-}
 
 .kodex {
     display: flex;
@@ -496,6 +486,13 @@ button:hover {
     background-position: 140px 0;
     background-repeat:  no-repeat; 
 
+    @media  (min-width: 900px)  {  
+        height: 87svw;
+        padding: 15svw 0 80px 0;
+        background-size: 87vw;
+        background-position: 53.5svw 0;
+    }
+
     & h2 {
         font-size: 40svw;
         text-align: center;
@@ -505,27 +502,53 @@ button:hover {
             font-size:   18vw;  
         }
     }
+
+    & #sticker-1 {
+        position: absolute;
+        width: 40svw;
+        left: 3svw;
+        margin-top: -19svw;
+        z-index: 2;
+
+        @media  (min-width: 900px)  {  
+            width: 26svw;
+            left: 6svw;
+            margin-top: -5svw;
+        }
+    }
+
+    & #sticker-2 {
+        position: absolute;
+        width: 40svw;
+        right: 6svw;
+        align-self: flex-end;    
+        margin-top: 111svw;
+        z-index: 0;
+
+        @media  (min-width: 900px)  {  
+            width: 23svw;
+            right: 8svw;
+            margin-top: 24svw;
+        }
+    }
 }
 
 
-/* .kodex svg {
-    /* position: absolute; 
-    display: block;
-    /* margin: 50px 20px 0 20px ; 
-    width: 200vw;
-    /* top: 0; 
-} */
 
 .project-history {
     background-color: #ffffff;
     padding: 35svw 6svw 35svw 6svw;
 
+    @media  (min-width: 900px)  {  
+        padding: 0 0 15svw 0;
+    }
+
     & hgroup {
         @media  (min-width: 900px)  {  
-            display:        flex;
-            width:          40%;
+            display: flex;
+            width: 45%;
             flex-direction: column;
-            margin:         auto;
+            margin: auto;
         }
  
     }
@@ -533,32 +556,21 @@ button:hover {
         margin: 20svw 0 7svw 0;
 
         @media  (min-width: 900px)  {  
-            margin: 200px   0   2svw    0;
+            margin: 200px 0 2svw 0;
         }
     }
 
     & p {
-        margin: 4svw   0;
+        margin: 4svw 0;
 
 
         @media  (min-width: 900px)  {  
-            margin: 1svw   0;
+            margin: 1svw 0;
         }
-    }
-
-    @media  (min-width: 900px)  {  
-        padding: 0 0 15svw 0;
     }
 }
 
-/* .project-history h5 {
-    margin: 200px 0 0 0;
-} */
 
-
-    /* .project-history    p  {
-        margin: 1svw   0;
-    } */
 
 
 
@@ -584,12 +596,22 @@ button:hover {
     background-size:    60em;
     background-position: top center;
     background-repeat:  no-repeat; 
+
+    @media  (min-width: 900px)  {  
+        background-size:    65em;
+        background-repeat:  repeat-x;
+        padding:            12svw   10px;
+    }
 }
 
 
 .ritm-130 .text-center {
     margin: 96svw 50px 0 50px;
     color: black;
+
+    @media  (min-width: 900px)  {  
+        margin: 28svw   50px    0   50px;
+    }    
 }
 
 .ritm-130 .marker {
@@ -598,10 +620,11 @@ button:hover {
 
 
 
-#kodex {
-    /* width: 100svw; */
-    /* height: 100vh; */
-}
+
+
+
+
+
 
 
 
@@ -642,9 +665,23 @@ button:hover {
     color: white;
 
     @media (min-width: 900px) {  
-        padding: 0 3svw 4svw 3svw;
+        padding: 3svw 3svw 4svw 3svw;
     }
 
+    &::after { /* градиент на фонe */
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        z-index: -1;
+
+        height: 90%;
+        background: linear-gradient(
+            to top,
+            #FC709C,
+            transparent 50%);
+    }
 
     & .logo {
         width: 8.3em;
@@ -698,24 +735,6 @@ button:hover {
     } 
 
 }
-
-
-
-.cover::after { /* наложение градиента на фон */
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -2px;
-    z-index: -1;
-
-    height: 90%;
-    background: linear-gradient(
-        to top,
-        #FC709C,
-        transparent 50%);
-}
-
 
 
 .client-pain {
@@ -785,6 +804,12 @@ button:hover {
     background-position: -140px 0;
     background-repeat:  no-repeat; 
 
+    @media (min-width: 900px) {
+        padding: 100px 0 12svw 0;
+        background-size: 84vw;
+        background-position: -10svw 0svw;
+    }
+
     & h5 {
         position: relative;
         z-index: 2;
@@ -806,6 +831,11 @@ button:hover {
         width: 80vw;
         align-self: flex-end;    
         margin-top: -5px;
+
+        @media (min-width: 900px) {
+            width:      40vw;
+            margin-top: -40svw;
+        }  
     }
 }
 
@@ -855,144 +885,122 @@ button:hover {
 }
 
 .space {
-    /* background-image:   url("media/ellipse.svg");
-    background-size:    200vw;
-    background-position: -100vw 78svw;
-    background-repeat:  no-repeat; */
     position: relative;
-
-    /* & img {
-        width: 90svw;
-        margin: 2svw 0 10svw 2svw;
-
-        @media  (min-width: 900px)  {   
-        margin: 2svw;
-        }
-    } */
-
-    /* display: flex; */
-
-    /* --gap: 1em;
-    --columns: 1;
-    --gap-number: calc(var(--columns) - 1);
-    gap: var(--gap); */
-
-    & hgroup {
-        /* width: 80%; */
-        /* text-align: left; */
-        /* margin: 0 3svw; */
-
-        @media  (min-width: 900px)  {   
-            /* --columns: 4; */
-            /* width: calc((100% - var(--gap-number) * var(--gap)) / (var(--columns))); */
-            /* margin: 5svw; */
-            /* margin: 0svw; */
-        }
-
-        & h4 {
-            /* margin: 2svw; */
-        }
-    }
 
     @media  (min-width: 900px)  {   
         padding: 0 0 8svw 0
     }
-}
 
-#collage-ellipse {
-    position: absolute;
-    width: 193svw;
+    & hgroup {
+        padding: 5svw 3svw;
 
-    top: 101svw;
-    left: -95svw;
+        & p {
+            width: 90%;
+            margin: 8svw 0;
 
-    z-index: 2;
+            @media (min-width: 900px) {  
+                width: 40%;
+                margin: 3svw 0;  
+            }
+        }
+    }
 
-    @media  (min-width: 900px)  {   
-        width: 114svw;
 
+    & #collage-ellipse {
+        position: absolute;
+        width: 193svw;
+
+        top: 101svw;
+        left: -95svw;
+
+        z-index: 3;
+
+        @media  (min-width: 900px)  {   
+            width: 114svw;
+
+            top: -39svw;
+            left: -22svw;
+        }
+    }
+
+    & #collage-photo-1 {
+        width: 60svw;
+        height: 90svw;
+        object-fit: cover;
+
+        position: relative;
+        top: 2svw;
+        left: 20svw;
+
+        @media  (min-width: 900px)  {   
+            width: 25svw;
+            height: 38svw;
+
+            top: 0svw;
+            left: 9svw;
+        }
+    }
+
+    & #collage-photo-2 {
+        width: 48svw;
+        height: 48svw;
+        object-fit: cover;
+
+        position: relative;
+        top: -10svw;
+        left: 2svw;
+
+        z-index: 2;
+
+        @media  (min-width: 900px)  {   
+            width: 20svw;
+            height: 20svw;
+
+            top: -26svw;
+            left: 4svw;
+        }
+    }
+
+    & #collage-photo-3 {
+        width: 60svw;
+        height: 90svw;
+        object-fit: cover;
+
+        position: relative;
+        top: -27svw;
+        left: 31svw;
+
+        z-index: 2;
+
+        @media  (min-width: 900px)  {   
+            width: 25svw;
+            height: 41svw;
+
+            top: -11svw;
+            left: 13svw;
+        }
+    }
+
+    & #collage-photo-4 {
+        width: 74svw;
+        height: 74svw;
+        object-fit: cover;
+
+        position: relative;
         top: -39svw;
-        left: -22svw;
+        left: 5svw;
+
+        z-index: 1;
+
+        @media  (min-width: 900px)  {   
+            width: 22svw;
+            height: 22svw;
+
+            top: 7svw;
+            left: 0svw;
+        }
     }
 }
-
-#collage-photo-1 {
-    width: 60svw;
-    height: 90svw;
-    object-fit: cover;
-
-    position: relative;
-    top: 2svw;
-    left: 20svw;
-
-    @media  (min-width: 900px)  {   
-        width: 25svw;
-        height: 38svw;
-
-        top: 0svw;
-        left: 9svw;
-    }
-}
-
-#collage-photo-2 {
-    width: 48svw;
-    height: 48svw;
-    object-fit: cover;
-
-    position: relative;
-    top: -10svw;
-    left: 2svw;
-
-    z-index: 2;
-
-    @media  (min-width: 900px)  {   
-        width: 20svw;
-        height: 20svw;
-
-        top: -26svw;
-        left: 4svw;
-    }
-}
-
-#collage-photo-3 {
-    width: 60svw;
-    height: 90svw;
-    object-fit: cover;
-
-    position: relative;
-    top: -27svw;
-    left: 31svw;
-
-    @media  (min-width: 900px)  {   
-        width: 25svw;
-        height: 41svw;
-
-        top: -11svw;
-        left: 13svw;
-    }
-}
-
-#collage-photo-4 {
-    width: 74svw;
-    height: 74svw;
-    object-fit: cover;
-
-    position: relative;
-    top: -39svw;
-    left: 5svw;
-
-    z-index: 2;
-
-    @media  (min-width: 900px)  {   
-        width: 22svw;
-        height: 22svw;
-
-        top: 7svw;
-        left: 0svw;
-    }
-}
-
-
 
 
 .headliners {  
@@ -1067,17 +1075,80 @@ button:hover {
 
 
 .diving {
-    margin:         20svw    0;
+    margin: 20svw 0;
 
     @media  (min-width: 900px)  {   
-        display:        flex;
-        width:          60%;
+        display: flex;
+        width: 60%;
         flex-direction: column;
-        margin:         18svw    auto;
+        margin: 18svw auto;
     }
 }
 
-.ritm-130-2 {
+.timeline {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50svw;
+    padding: 0 3svw;
+
+    @media  (min-width: 900px)  {
+        gap: 30svw;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 10svw;
+        width: 1.2px;
+        background: black;
+
+        @media  (min-width: 900px)  {
+            left: 6.5svw;
+        }
+    }
+
+    & .timeline-final {
+        z-index: 2;
+        margin: 0;
+        background: #FC709C;
+        padding: 0 0 2svw;
+        text-align: center;
+        height: auto;
+    }
+
+    & hgroup {
+        display: grid;
+        grid-template-columns: 16svw  1fr;
+        gap: 3svw;
+
+
+        @media  (min-width: 900px)  {
+            grid-template-columns: 7svw 0.7fr;
+        }
+    }
+
+    & .text-center {
+        z-index: 2;
+        margin: 0;
+        background: #FC709C;
+        height: fit-content;
+        padding: 0 0 2svw;
+    }
+
+    & h6 {  
+        margin: 0 0 3svw;
+
+        @media  (min-width: 900px)  {
+            margin: 0 0 1.2svw;
+        }
+    }
+}
+
+.ritm-130-v2 {
     position: relative;
 
     height: 120svh;
@@ -1210,168 +1281,6 @@ input:focus-visible {
     outline: none;
 }
 
-
-/* ————————————— adaptive version ————————————— */
-
-@media  (min-width: 900px)  {
-    .logo   {
-        width:      11.6em;
-    }
-
-
-
-    header  {
-        padding:    1svw;
-    }
-
-    h2  {
-       font-size:   18vw; 
-    }
-
-    h4  {
-        /* font-size:  12.5em; */
-        font-size: 10.5svw;
-    }
-
-    h5  {
-        font-size:  5em;
-    }
-
-    h6  {
-        font-size:  1.7em;
-    }
-
-    .decision   video {
-        width:      40vw;
-        margin-top: -40svw;
-
-    }  
-
-    .decision   {
-        padding:                100px   0   12svw   0;
-        background-size:        84vw;
-        background-position:    -10svw  0svw;
-    }
-
-    /* .decision h5    {
-        margin:     0   0   0   2svw;
-        width:      50%;
-    } */
-
-    .p-frame    {
-        justify-content:    center;
-    }
-
-
-
-
-    p {
-        font-size: 1.5em;
-    }
-
-    .schedule {
-        display:            flex;
-        flex-direction:     column;
-        justify-content:    space-between;
-        align-items:        center;    
-    }
-
-    .schedule svg {
-        width: 40svw;
-    }
-/* 
-    .background { 
-       display: block; 
-    } */
-
-    /* .background-mobile { 
-       display: none; 
-    } */
-    
-
-    .button-sticky  {
-        width:  fit-content;
-        top:    2svw;
-        right:  2svw;
-        bottom: auto;
-        margin: 0;
-
-        font-size:  1.5em;
-
-        transform: translateY(-120px);
-    }
-
-
-
-
-
-/* 
-    hgroup  p   {
-        margin: 0;
-    } */
-
-    .timeline   {
-        gap:    30svw;
-    }
-
-    .timeline   hgroup  {
-        grid-template-columns:  7svw    0.7fr;
-    }
-
-    .timeline::before   {
-        left:   6.5svw;
-    }
-
-    .timeline   h6  {
-        margin: 0 0 1.2svw;
-    }
-
-    figcaption  {
-        font-size:  1.5em;
-        margin:     1svw    0;
-    }
-
-    #sticker-1  {
-        width:      26svw;
-        left:       6svw;
-        margin-top: -5svw;
-    }
-
-    #sticker-2  {
-        width:      23svw;
-        right:      8svw;
-        margin-top: 24svw;
-    }
-
-    .kodex  {
-        height:                 87svw;
-        padding:                15svw   0   80px    0;
-        background-size:        87vw;
-        background-position:    53.5svw 0;
-    }
-
-    .ritm-130   {
-        background-size:    65em;
-        background-repeat:  repeat-x;
-        padding:            12svw   10px;
-    }
-
-
-
-    .ritm-130   .text-center    {
-        margin: 28svw   50px    0   50px;
-    }
-
-
-
-
-
-
-}
-
-
-
-
 @media (min-width: 500px) and (max-width: 900px) {
     .email-form {
         width: 350px;
@@ -1404,6 +1313,45 @@ input:focus-visible {
 
 
 }
+
+
+
+
+/* ————————————— adaptive version ————————————— */
+
+@media  (min-width: 900px)  {
+
+    header  {
+        padding:    1svw;
+    }
+
+
+
+    h5  {
+        font-size:  5em;
+    }
+
+
+    .p-frame    {
+        justify-content:    center;
+    }
+
+
+
+
+
+
+
+
+    figcaption  {
+        font-size:  1.5em;
+        margin:     1svw    0;
+    }
+
+}
+
+
+
 
 
 
@@ -1526,3 +1474,167 @@ input:focus-visible {
     z-index: 0;
     margin-top: -5px;
 } */
+
+
+/* .project-history h5 {
+    margin: 200px 0 0 0;
+} */
+
+
+    /* .project-history    p  {
+        margin: 1svw   0;
+    } */
+
+    /* hgroup  p    {
+    margin:     6svw    0;
+} */
+
+
+/* 
+    hgroup  p   {
+        margin: 0;
+    } */
+
+
+/* 
+    .background { 
+       display: block; 
+    } */
+
+    /* .background-mobile { 
+       display: none; 
+    } */
+
+/* .space {
+    background-image:   url("media/ellipse.svg");
+    background-size:    200vw;
+    background-position: -100vw 78svw;
+    background-repeat:  no-repeat;
+    position: relative;
+
+    & img {
+        width: 90svw;
+        margin: 2svw 0 10svw 2svw;
+
+        @media  (min-width: 900px)  {   
+        margin: 2svw;
+        }
+    }
+
+    display: flex;
+
+    --gap: 1em;
+    --columns: 1;
+    --gap-number: calc(var(--columns) - 1);
+    gap: var(--gap);
+
+    & hgroup {
+        width: 80%;
+        text-align: left;
+        margin: 0 3svw;
+
+        @media  (min-width: 900px)  {   
+            --columns: 4;
+            width: calc((100% - var(--gap-number) * var(--gap)) / (var(--columns)));
+            margin: 5svw;
+            margin: 0svw;
+        }
+
+        & h4 {
+            margin: 2svw;
+        }
+    }
+
+    @media  (min-width: 900px)  {   
+        padding: 0 0 8svw 0
+    }
+} */
+
+
+/* .kodex svg {
+    /* position: absolute; 
+    display: block;
+    /* margin: 50px 20px 0 20px ; 
+    width: 200vw;
+    /* top: 0; 
+} */
+
+/* #kodex {
+    width: 100svw;
+    height: 100vh;
+} */
+
+/* .kodex {
+    /* height: 100vh;
+    /* background-color: #ffffff; 
+    padding: 40px 0;
+} */
+
+    /* h6  {
+        font-size:  1.7em;
+    } */
+
+    /* .decision   video {
+        width:      40vw;
+        margin-top: -40svw;
+
+    }   */
+
+    /* .decision   {
+        padding:                100px   0   12svw   0;
+        background-size:        84vw;
+        background-position:    -10svw  0svw;
+    } */
+
+    /* .decision h5    {
+        margin:     0   0   0   2svw;
+        width:      50%;
+    } */
+
+
+/* .timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10svw;
+    width: 1.2px;
+    background: black;
+} */
+
+/* .timeline h6 {  
+    margin: 0 0 3svw;
+} */
+
+/* .timeline-final {
+    z-index: 2;
+    margin: 0;
+    background: #FC709C;
+    padding: 0 0 2svw;
+    text-align: center;
+    height: auto;
+} */
+
+/* .timeline .text-center {
+    z-index: 2;
+    margin: 0;
+    background: #FC709C;
+    height: fit-content;
+    padding: 0 0 2svw;
+} */
+
+    /* .timeline   {
+        gap:    30svw;
+    } */
+
+    /* .timeline   hgroup  {
+        grid-template-columns:  7svw    0.7fr;
+    } */
+
+    /* .timeline::before   {
+        left:   6.5svw;
+    } */
+
+    /* .timeline   h6  {
+        margin: 0 0 1.2svw;
+    } */
