@@ -23,7 +23,7 @@ window.addEventListener("scroll", () => {
     // Ограничиваем progress диапазоном 0-1
     const clampedProgress = Math.min(Math.max(progress, 0), 1);
 
-    // Масштаб от 1 до 0.92
+    // Масштаб от 1 до 0.8
     const scale = 1 - clampedProgress * 0.2;
 
     texts.forEach((text, i) => {
@@ -53,3 +53,54 @@ window.addEventListener("scroll", () => {
     }
 
 });
+
+
+// ========================================
+// БЕСКОНЕЧНЫЙ ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ
+// ========================================
+
+const slider = document.querySelector("#carousel");
+
+if (slider) {
+
+    const items = [...slider.children];
+
+    // Дублируем картинки справа
+    items.forEach(item => {
+        slider.appendChild(item.cloneNode(true));
+    });
+
+    // Дублируем картинки слева
+    items.forEach(item => {
+        slider.insertBefore(item.cloneNode(true), slider.firstChild);
+    });
+
+    window.addEventListener("load", () => {
+
+        const gap = 20;
+        const itemWidth = items[0].offsetWidth + gap;
+
+        // Перемещаемся в центральную копию
+        slider.scrollLeft = itemWidth * items.length;
+
+    });
+
+    slider.addEventListener("scroll", () => {
+
+        const gap = 20;
+        const itemWidth = items[0].offsetWidth + gap;
+        const totalWidth = itemWidth * items.length;
+
+        // Слишком далеко вправо
+        if (slider.scrollLeft >= totalWidth * 2) {
+            slider.scrollLeft -= totalWidth;
+        }
+
+        // Слишком далеко влево
+        if (slider.scrollLeft <= 0) {
+            slider.scrollLeft += totalWidth;
+        }
+
+    });
+
+}
