@@ -55,52 +55,90 @@ window.addEventListener("scroll", () => {
 });
 
 
-// ========================================
-// БЕСКОНЕЧНЫЙ ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ
-// ========================================
+(function () {
+    const gallery = document.getElementById("space-gallery");
+    const track = document.getElementById("space-gallery-track");
 
-const slider = document.querySelector("#carousel");
+    if (!gallery || !track) return;
 
-if (slider) {
+    // клонируем набор фото ещё дважды, чтобы скролл был бесконечным
+    const originalItems = Array.from(track.children);
+    originalItems.forEach(item => track.appendChild(item.cloneNode(true)));
+    originalItems.forEach(item => track.insertBefore(item.cloneNode(true), track.firstChild));
 
-    const items = [...slider.children];
+    let setWidth = 0;
 
-    // Дублируем картинки справа
-    items.forEach(item => {
-        slider.appendChild(item.cloneNode(true));
+    function centerScroll() {
+        setWidth = track.scrollWidth / 3;
+        gallery.scrollLeft = setWidth;
+    }
+
+    window.addEventListener("load", centerScroll);
+    window.addEventListener("resize", centerScroll);
+
+    // зацикливание при достижении края
+    gallery.addEventListener("scroll", () => {
+        if (gallery.scrollLeft <= 0) {
+            gallery.scrollLeft += setWidth;
+        } else if (gallery.scrollLeft >= setWidth * 2) {
+            gallery.scrollLeft -= setWidth;
+        }
     });
 
-    // Дублируем картинки слева
-    items.forEach(item => {
-        slider.insertBefore(item.cloneNode(true), slider.firstChild);
-    });
+    // --- автоскролл ---
+    const AUTO_SPEED = 40; // px в секунду, примерно 1 фото в секунду
+    const RESUME_DELAY = 3000; // через сколько мс после взаимодействия снова включать автоскролл
 
-    window.addEventListener("load", () => {
+    let autoEnabled = true;
+    let resumeTimeout = null;
+    let lastTime = null;
 
-        const gap = 20;
-        const itemWidth = items[0].offsetWidth + gap;
+    function autoStep(time) {
+        if (lastTime === null) lastTime = time;
+        const dt = (time - lastTime) / 1000;
+        lastTime = time;
 
-        // Перемещаемся в центральную копию
-        slider.scrollLeft = itemWidth * items.length;
-
-    });
-
-    slider.addEventListener("scroll", () => {
-
-        const gap = 20;
-        const itemWidth = items[0].offsetWidth + gap;
-        const totalWidth = itemWidth * items.length;
-
-        // Слишком далеко вправо
-        if (slider.scrollLeft >= totalWidth * 2) {
-            slider.scrollLeft -= totalWidth;
+        if (autoEnabled && !isDown) {
+            gallery.scrollLeft += AUTO_SPEED * dt;
         }
 
-        // Слишком далеко влево
-        if (slider.scrollLeft <= 0) {
-            slider.scrollLeft += totalWidth;
-        }
+        requestAnimationFrame(autoStep);
+    }
+    requestAnimationFrame(autoStep);
 
+    function pauseAuto() {
+        autoEnabled = false;
+        clearTimeout(resumeTimeout);
+        resumeTimeout = setTimeout(() => {
+            autoEnabled = true;
+        }, RESUME_DELAY);
+    }
+
+    // любое ручное взаимодействие останавливает автоскролл
+    gallery.addEventListener("wheel", pauseAuto, { passive: true });
+    gallery.addEventListener("touchstart", pauseAuto, { passive: true });
+
+    // перетаскивание мышью
+    let isDown = false;
+    let startX = 0;
+    let scrollStart = 0;
+
+    gallery.addEventListener("mousedown", (e) => {
+        isDown = true;
+        pauseAuto();
+        gallery.classList.add("dragging");
+        startX = e.pageX;
+        scrollStart = gallery.scrollLeft;
     });
 
-}
+    window.addEventListener("mouseup", () => {
+        isDown = false;
+        gallery.classList.remove("dragging");
+    });
+
+    window.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        gallery.scrollLeft = scrollStart - (e.pageX - startX);
+    });
+})();

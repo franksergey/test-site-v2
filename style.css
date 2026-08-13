@@ -609,6 +609,67 @@ button:hover {
 .space {
     position: relative;
 
+    @media (min-width: 900px) {   
+        padding: 0 0 8svw 0
+    }
+
+    & hgroup {
+        padding: 5svw 3svw;
+
+        & p {
+            width: 90%;
+            margin: 8svw 0;
+
+            @media (min-width: 900px) {  
+                width: 40%;
+                margin: 3svw 0;  
+            }
+        }
+    }
+
+    & .space-gallery {
+        overflow-x: auto;
+        overflow-y: hidden;
+        cursor: grab;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &.dragging {
+            cursor: grabbing;
+            scroll-behavior: auto;
+            user-select: none;
+        }
+    }
+
+    & .space-gallery-track {
+        display: flex;
+        gap: 3svw;
+        width: max-content;
+        padding: 0 3svw 5svw;
+    }
+
+    & .space-photo {
+        flex: 0 0 auto;
+        width: 60svw;
+        height: 80svw;
+        object-fit: cover;
+        -webkit-user-drag: none;
+
+        @media (min-width: 900px) {
+            width: 22svw;
+            height: 22svw;
+        }
+    }
+}
+
+/*
+.space {
+    position: relative;
+
     @media  (min-width: 900px)  {   
         padding: 0 0 8svw 0
     }
@@ -658,7 +719,7 @@ button:hover {
 
     & img {
         object-fit: cover;
-        /* position: relative; */
+        /* position: relative; 
 
         flex-shrink: 0;
 
@@ -678,7 +739,7 @@ button:hover {
 
     & #collage-photo-1 {
         /* width: ;
-        height: ; */
+        height: ; 
         position: relative;
 
         top: -9px;
@@ -689,7 +750,7 @@ button:hover {
             height: ;
 
             top: ;
-            left: ; */
+            left: ; 
         }
     }
 
@@ -700,14 +761,14 @@ button:hover {
         top: ;
         left: ;
 
-        z-index: ; */
+        z-index: ; 
 
         @media  (min-width: 900px)  {   
             /* width: ;
             height: ;
 
             top: ;
-            left: ; */
+            left: ; 
         }
     }
 
@@ -718,14 +779,14 @@ button:hover {
         top: ;
         left: ;
 
-        z-index: ; */
+        z-index: ; 
 
         @media  (min-width: 900px)  {   
             /* width: ;
             height: ;
 
             top: ;
-            left: ; */
+            left: ; 
         }
     }
 
@@ -736,17 +797,17 @@ button:hover {
         top: ;
         left: ;
 
-        z-index: ; */
+        z-index: ; 
 
         @media  (min-width: 900px)  {   
             /* width: ;
             height: ;
 
             top: ;
-            left: ; */
+            left: ; 
         }
     }
-}
+} */
 
 /* .space {
     position: relative;
