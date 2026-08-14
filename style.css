@@ -606,7 +606,68 @@ button:hover {
     }
 }
 
-.space {
+
+
+.space {  
+    position: relative;
+
+    @media (min-width: 900px) {   
+        padding: 0 0 8svw 0
+    }
+
+    & hgroup {
+        padding: 5svw 3svw;
+    }
+
+    & div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5svw;
+        padding: 0 3svw 5svw;
+
+        @media (min-width: 900px) {
+            gap: 0.8svw;
+        }
+
+        & p {
+            /* width: 90%;
+            margin: 8svw 0; */
+
+            font-size: 0.8em;
+            height: 65svw;
+            flex: 1 1 42.9svw;
+            min-width: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            gap: 1.5svw;
+            margin: 0;
+            padding: 1.2svw 4.2svw 1.2svw 1.2svw;
+
+            @media (min-width: 900px) {  
+                /* width: 40%;
+                margin: 3svw 0;   */
+                height: 24svw;
+                flex: 1 1 25svw;
+            }
+        }
+
+        & img {
+            height: 65svw;
+            flex: 1 1 auto;
+            object-fit: cover;
+            min-width: 0;
+
+            @media (min-width: 900px) {
+                height: 28svw;
+            }
+        }
+    }
+
+}
+
+/* .space {
     position: relative;
 
     @media (min-width: 900px) {   
@@ -649,14 +710,14 @@ button:hover {
         display: flex;
         gap: 3svw;
         width: max-content;
-        padding: 0 3svw 5svw;
+        padding: 0 3svw 20svw;
     }
 
     & .space-photo {
         flex: 0 0 auto;
         width: 60svw;
-        height: 80svw;
-        object-fit: cover;
+        /* height: 80svw; 
+        object-fit: contain;
         -webkit-user-drag: none;
 
         @media (min-width: 900px) {
@@ -664,7 +725,7 @@ button:hover {
             height: 22svw;
         }
     }
-}
+} */
 
 /*
 .space {
