@@ -648,8 +648,10 @@ button:hover {
             @media (min-width: 900px) {  
                 /* width: 40%;
                 margin: 3svw 0;   */
-                height: 24svw;
-                flex: 1 1 25svw;
+                font-size: 1.3em;
+                height: 28svw;
+                flex: 1 1 17svw;
+                padding: 1.2svw 2.2svw 1.2svw 1.2svw;
             }
         }
 
