@@ -54,6 +54,21 @@ window.addEventListener("scroll", () => {
 
 });
 
+(function () {
+    const video = document.querySelector(".background-video");
+    const button = document.getElementById("sound-toggle");
+
+    if (!video || !button) return;
+
+    button.addEventListener("click", () => {
+        video.muted = !video.muted;
+        button.classList.toggle("is-unmuted", !video.muted);
+        button.setAttribute(
+            "aria-label",
+            video.muted ? "Включить звук" : "Выключить звук"
+        );
+    });
+})();
 
 // (function () {
 //     const gallery = document.getElementById("space-gallery");

@@ -34,9 +34,27 @@
     <body>
 
         <main>
+
             <section class="cover"> <!-- обложка -->
                 <h1 class="hide">Ритм Ноль</h1>
                 <p class="hide">ум волнуется раз, душа волнуется два, тело волнуется три, замри </p>
+                <video class="background-video" autoplay="autoplay" allowfullscreen="true" muted="muted"  playsinline="playsinline" loop="loop" preload="auto">
+                    <source src="media/cover-video.mp4" type="video/mp4">
+                    <!-- <source src="media/decision-video.mp4" type="video/mp4"> -->
+                </video>
+
+                <button class="sound-toggle" id="sound-toggle" aria-label="Включить звук" type="button">
+                    <svg class="icon-muted" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/>
+                        <line x1="16" y1="9" x2="21" y2="14" stroke="currentColor" stroke-width="2"/>
+                        <line x1="21" y1="9" x2="16" y2="14" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/>
+                        <path d="M16 8a5 5 0 0 1 0 8" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M18.5 5.5a9 9 0 0 1 0 13" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                </button>
 
                 <!-- <svg id="slogan-mobile" viewBox="0 0 2374 3880" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <g>
@@ -225,6 +243,9 @@
                     >Купить билет
                     </button> -->
                 </div>
+
+
+
             </section>
 
             <section class="client-pain"> <!-- боль клиента -->

@@ -402,6 +402,7 @@ button:hover {
 }
 
 .cover {
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -412,17 +413,20 @@ button:hover {
     padding: 3svw 3svw 6svw 3svw;
 
     height: 100svh;
-    background-image: url("media/cover-background-image.jpg");
+    /* background-image: url("media/cover-background-image.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     color: white;
 
     @media (min-width: 900px) {  
         padding: 3svw 3svw 4svw 3svw;
     }
 
+    
+
     &::after { /* градиент на фонe */
+        display: block;
         content: "";
         position: absolute;
         left: 0;
@@ -430,11 +434,15 @@ button:hover {
         bottom: -2px;
         z-index: -1;
 
-        height: 90%;
+        height: 60%;
         background: linear-gradient(
             to top,
             #FC709C,
             transparent 50%);
+
+        @media (min-width: 900px) {  
+            display: none;
+        }
     }
 
     & .logo {
@@ -451,7 +459,7 @@ button:hover {
         }
     }
 
-    & button {
+    /* & button {
         color: #ffffff;
         border: 1px solid white;
 
@@ -462,7 +470,7 @@ button:hover {
             font-size: 1.5em;
             margin: 1svw 0 0 0;
         } 
-    }
+    } */
 
     & #slogan-mobile {
         display: block;
@@ -488,7 +496,57 @@ button:hover {
         }
     } 
 
+    & video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: -2;
+    }
+
+    & .sound-toggle {
+    position: absolute;
+    top: 3svw;
+    right: 3svw;
+    z-index: 2;
+
+    width: 2.5em;
+    height: 2.5em;
+    padding: 0.5em;
+
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+        & svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        & .icon-unmuted {
+            display: none;
+        }
+
+        &.is-unmuted {
+            & .icon-muted {
+                display: none;
+            }
+            & .icon-unmuted {
+                display: block;
+            }
+        }
+    }
+
 }
+
 
 .client-pain {
     height: 250vh;
