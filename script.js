@@ -54,6 +54,18 @@ window.addEventListener("scroll", () => {
 
 });
 
+window.addEventListener("load", () => {
+    const video = document.querySelector(".background-video");
+    if (!video) return;
+
+    video.querySelectorAll("source").forEach(source => {
+        source.src = source.dataset.src;
+    });
+
+    video.load();
+    video.play().catch(() => {});
+});
+
 (function () {
     const video = document.querySelector(".background-video");
     const button = document.getElementById("sound-toggle");
