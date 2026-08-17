@@ -38,24 +38,6 @@
             <section class="cover"> <!-- обложка -->
                 <h1 class="hide">Ритм Ноль</h1>
                 <p class="hide">ум волнуется раз, душа волнуется два, тело волнуется три, замри </p>
- 
-                <video class="background-video" muted playsinline loop poster="media/cover-background-image.webp" preload="none">
-                    <source data-src="media/cover-video.webm" type="video/webm">
-                    <source data-src="media/cover-video.mp4" type="video/mp4">
-                </video>
-
-                <button class="sound-toggle" id="sound-toggle" aria-label="Включить звук" type="button">
-                    <svg class="icon-muted" viewBox="0 0 24 24" fill="none">
-                        <path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/>
-                        <line x1="16" y1="9" x2="21" y2="14" stroke="currentColor" stroke-width="2"/>
-                        <line x1="21" y1="9" x2="16" y2="14" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                    <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none">
-                        <path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/>
-                        <path d="M16 8a5 5 0 0 1 0 8" stroke="currentColor" stroke-width="2" fill="none"/>
-                        <path d="M18.5 5.5a9 9 0 0 1 0 13" stroke="currentColor" stroke-width="2" fill="none"/>
-                    </svg>
-                </button>
 
                 <!-- <svg id="slogan-mobile" viewBox="0 0 2374 3880" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <g>
@@ -244,9 +226,6 @@
                     >Купить билет
                     </button> -->
                 </div>
-
-
-
             </section>
 
             <section class="client-pain"> <!-- боль клиента -->
@@ -277,11 +256,53 @@
                 <section class="space"> <!-- пространство -->
                     <hgroup>
                         <h4>Пространство</h4>
-
-
+                        <p> 
+                            Уникальное атмосферное пространство с 16-и метровыми сводами, 
+                            сходу погружающее в эмоции. Игра света и оттенков «голубого» 
+                            бетона в купе с масштабной архитектурной формой — это уже 
+                            само по себе must see место.
+                        </p>
                     </hgroup>
 
-                    <div>
+                    <div class="space-gallery">
+                        <div class="space-gallery-track">
+                            <div class="space-collage">
+                                <img class="space-photo vertical"   style="left:15.56%; top:13.48%" src="media/collage-photo-6.webp">
+                                <img class="space-photo vertical"   style="left:64.19%; top:13.48%" src="media/collage-photo-4.webp">
+                                <img class="space-photo horizontal" style="left:7.99%;  top:57.29%" src="media/collage-photo-1.webp">
+                                <img class="space-photo vertical"   style="left:0%;     top:17.49%" src="media/collage-photo-2.webp">
+                                <img class="space-photo horizontal" style="left:34.69%; top:38.78%" src="media/collage-photo-7.webp">
+                                <img class="space-photo vertical"   style="left:48.63%; top:17.49%" src="media/collage-photo-8.webp">
+                                <img class="space-photo horizontal" style="left:56.62%; top:57.29%" src="media/collage-photo-3.webp">
+                                <img class="space-photo horizontal" style="left:24.94%; top:0%"     src="media/collage-photo-5.webp">
+                                <img class="space-photo horizontal" style="left:73.57%; top:0%"     src="media/collage-photo-9.webp">
+                                <img class="space-photo horizontal" style="left:83.32%; top:38.48%" src="media/collage-photo-10.webp">
+                            </div>
+
+                            <!-- <svg class="space-photo" viewBox="0 0 4892 1372" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2379" y="240" width="586" height="816" fill="#9C9B9B"/>
+                                <rect y="240" width="586" height="816" fill="#808080"/>
+                                <rect x="761" y="185" width="586" height="816" fill="#808080"/>
+                                <rect x="3140" y="185" width="586" height="816" fill="#9C9B9B"/>
+                                <rect x="1207" y="786" width="586" height="816" transform="rotate(90 1207 786)" fill="#9C9B9B"/>
+                                <rect x="3586" y="786" width="586" height="816" transform="rotate(90 3586 786)" fill="#808080"/>
+                                <rect x="2513" y="532" width="586" height="816" transform="rotate(90 2513 532)" fill="#808080"/>
+                                <rect x="2036" width="586" height="816" transform="rotate(90 2036 0)" fill="#9C9B9B"/>
+                                <rect x="4415" width="586" height="816" transform="rotate(90 4415 0)" fill="#808080"/>
+                                <rect x="4892" y="528" width="586" height="816" transform="rotate(90 4892 528)" fill="#9C9B9B"/>
+                            </svg> -->
+                        </div>
+                    </div>
+                    
+                    <hgroup>
+                    <p>
+                        В пространстве работают два альтернативных бара 
+                        с функциональными напитками, авторская кофейня и чайная, 
+                        а также веранда с фуд-траком.
+                    </p>
+                    </hgroup>
+
+                    <!-- <div>
                         <img src="media/collage-photo-5.webp">
                         <p> 
                             Уникальное атмосферное пространство с 16-и метровыми сводами, 
@@ -292,7 +313,7 @@
                         <img src="media/collage-photo-1.webp">
                         <img src="media/collage-photo-9.webp">
                         <img src="media/collage-photo-8.webp">
-                        <!-- src="media/collage-photo-4.webp"> -->
+                        <!-- src="media/collage-photo-4.webp"> 
                         <p>
                             В пространстве работают два альтернативных бара 
                             с функциональными напитками, авторская кофейня и чайная, 
@@ -300,7 +321,7 @@
                         </p>
                         <img src="media/collage-photo-10.webp">
                         <img src="media/collage-photo-3.webp">
-                     </div>
+                     </div> -->
                 </section>
 
                 <!-- <section class="space"> пространство 

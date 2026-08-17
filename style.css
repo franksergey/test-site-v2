@@ -413,10 +413,10 @@ button:hover {
     padding: 3svw 3svw 6svw 3svw;
 
     height: 100svh;
-    /* background-image: url("media/cover-background-image.jpg");
+    background-image: url("media/cover-background-image.webp");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     color: white;
 
     @media (min-width: 900px) {  
@@ -441,7 +441,7 @@ button:hover {
             transparent 50%);
 
         @media (min-width: 900px) {  
-            display: none;
+            height: 40%;
         }
     }
 
@@ -459,7 +459,7 @@ button:hover {
         }
     }
 
-    /* & button {
+    & button {
         color: #ffffff;
         border: 1px solid white;
 
@@ -470,7 +470,7 @@ button:hover {
             font-size: 1.5em;
             margin: 1svw 0 0 0;
         } 
-    } */
+    }
 
     & #slogan-mobile {
         display: block;
@@ -495,56 +495,6 @@ button:hover {
             display: block; 
         }
     } 
-
-    & video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        z-index: -2;
-    }
-
-    & .sound-toggle {
-    position: absolute;
-    top: 3svw;
-    right: 3svw;
-    z-index: 2;
-
-    width: 2.5em;
-    height: 2.5em;
-    padding: 0.5em;
-
-    background: rgba(255, 255, 255, 0.15);
-    border: none;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-        & svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        & .icon-unmuted {
-            display: none;
-        }
-
-        &.is-unmuted {
-            & .icon-muted {
-                display: none;
-            }
-            & .icon-unmuted {
-                display: block;
-            }
-        }
-    }
-
 }
 
 
@@ -666,7 +616,7 @@ button:hover {
 
 
 
-.space {  
+/* .space {  
     position: relative;
 
     @media (min-width: 900px) {   
@@ -689,7 +639,7 @@ button:hover {
 
         & p {
             /* width: 90%;
-            margin: 8svw 0; */
+            margin: 8svw 0; 
 
             font-size: 0.8em;
             height: 65svw;
@@ -705,7 +655,7 @@ button:hover {
 
             @media (min-width: 900px) {  
                 /* width: 40%;
-                margin: 3svw 0;   */
+                margin: 3svw 0;  
                 font-size: 1.3em;
                 height: 30svw;
                 flex: 1 1 17svw;
@@ -725,21 +675,26 @@ button:hover {
         }
     }
 
-}
+} */
 
-/* .space {
+.space {
     position: relative;
+
+    background-image:   url("media/ellipse.svg");
+    background-size:    0;
+    background-position: 0;
+    background-repeat:  no-repeat; 
 
     @media (min-width: 900px) {   
         padding: 0 0 8svw 0
     }
 
     & hgroup {
-        padding: 5svw 3svw;
+        padding: 5svw 0 0  3svw;
 
         & p {
             width: 90%;
-            margin: 8svw 0;
+            margin: 8svw 0 0 0;
 
             @media (min-width: 900px) {  
                 width: 40%;
@@ -755,37 +710,79 @@ button:hover {
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
 
-        &::-webkit-scrollbar {
-            display: none;
+
+        /* scrollbar-width: thin;
+        scrollbar-color: white rgba(255, 255, 255, 0.2); */
+
+        /* &::-webkit-scrollbar {
+            height: 60px;
         }
 
-        &.dragging {
+        &::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.15);
+            /* border-radius: 30px; 
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: black;
+            /* border-radius: 30px; 
+        } */
+
+        /* &.dragging {
             cursor: grabbing;
             scroll-behavior: auto;
             user-select: none;
-        }
+        } */
     }
 
     & .space-gallery-track {
         display: flex;
         gap: 3svw;
         width: max-content;
-        padding: 0 3svw 20svw;
+        padding: 0 3svw 0;
     }
 
-    & .space-photo {
+    
+
+    /* & .space-photo {
         flex: 0 0 auto;
-        width: 60svw;
-        /* height: 80svw; 
+        /* width: 60svw; 
+        height: 128svw; 
         object-fit: contain;
         -webkit-user-drag: none;
 
         @media (min-width: 900px) {
-            width: 22svw;
-            height: 22svw;
+            /* width: 22svw; 
+            height: 70svw;
+        }
+    } */
+
+    & .space-collage {
+        position: relative;
+        height: 128svw; 
+        aspect-ratio: 4892 / 1372;
+        margin: 5svw 0;
+
+        @media (min-width: 900px) {
+            height: 60svw;
         }
     }
-} */
+
+    & .space-photo {
+        position: absolute;
+        object-fit: cover;
+
+        &.vertical {
+            width: 11.98%;
+            height: 59.48%;
+        }
+
+        &.horizontal {
+            width: 16.68%;
+            height: 42.71%;
+        }
+    }
+}
 
 /*
 .space {
@@ -1104,13 +1101,13 @@ button:hover {
     }
 
     @media  (min-width: 900px)  {   
-     --columns: 4;
-    padding: 2svw;
+        --columns: 4;
+        padding: 2svw;
 
-    background-image:   url("media/ellipse.svg");
-    background-size:    84vw;
-    background-position: 56vw 0;
-    background-repeat:  no-repeat; 
+        background-image:   url("media/ellipse.svg");
+        background-size:    84vw;
+        background-position: 56vw 0;
+        background-repeat:  no-repeat; 
 
         & .empty {
             display: block;
@@ -1200,9 +1197,9 @@ button:hover {
 .ritm-130-v2 {
     position: relative;
 
-    height: 120svh;
+    height: 110svh;
     width: 100%;
-    background-image: url("media/ritm-130-background.jpg");
+    background-image: url("media/ritm-130-background.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1219,6 +1216,7 @@ button:hover {
 
         @media  (min-width: 900px)  {   
             width: 10svw;
+            top: 7svw;
         }
     }
 
@@ -1228,6 +1226,10 @@ button:hover {
         bottom: 0svw;
         margin: 10svw;
         z-index: 1;
+
+        @media  (min-width: 900px)  {   
+            margin: 5svw;        
+        }
     }
 
         &::after { /* градиент на фонe */
