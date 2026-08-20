@@ -605,7 +605,7 @@ button:hover {
 
     & p {
         width: 90%;
-        margin: 8svw 0;
+        margin: 8svw 0 0 0;
 
         @media (min-width: 900px) {  
             width: 40%;
@@ -616,7 +616,7 @@ button:hover {
 
 
 
-/* .space {  
+ .space {  
     position: relative;
 
     @media (min-width: 900px) {   
@@ -638,7 +638,7 @@ button:hover {
         }
 
         & p {
-            /* width: 90%;
+            /* width: 90%; */
             margin: 8svw 0; 
 
             font-size: 0.8em;
@@ -654,8 +654,10 @@ button:hover {
             padding: 1.2svw 4.2svw 1.2svw 1.2svw;
 
             @media (min-width: 900px) {  
-                /* width: 40%;
-                margin: 3svw 0;  
+                /* width: 40%; */
+                justify-content: normal;
+
+                margin: 1svw 0;  
                 font-size: 1.3em;
                 height: 30svw;
                 flex: 1 1 17svw;
@@ -673,10 +675,18 @@ button:hover {
                 height: 30svw;
             }
         }
+
+        & .big-img {
+            height: 120svw;
+
+            @media (min-width: 900px) {
+                height: 50svw;
+            }
+        }
     }
+} 
 
-} */
-
+/*
 .space {
     position: relative;
 
@@ -711,28 +721,28 @@ button:hover {
         scrollbar-width: none;
 
 
-        /* scrollbar-width: thin;
-        scrollbar-color: white rgba(255, 255, 255, 0.2); */
+         scrollbar-width: thin;
+        scrollbar-color: white rgba(255, 255, 255, 0.2); 
 
-        /* &::-webkit-scrollbar {
+        &::-webkit-scrollbar {
             height: 60px;
         }
 
         &::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.15);
-            /* border-radius: 30px; 
+            border-radius: 30px; 
         }
 
         &::-webkit-scrollbar-thumb {
             background: black;
-            /* border-radius: 30px; 
-        } */
+            border-radius: 30px; 
+        } 
 
-        /* &.dragging {
+         &.dragging {
             cursor: grabbing;
             scroll-behavior: auto;
             user-select: none;
-        } */
+        } 
     }
 
     & .space-gallery-track {
@@ -744,18 +754,18 @@ button:hover {
 
     
 
-    /* & .space-photo {
+    & .space-photo {
         flex: 0 0 auto;
-        /* width: 60svw; 
+         width: 60svw; 
         height: 128svw; 
         object-fit: contain;
         -webkit-user-drag: none;
 
         @media (min-width: 900px) {
-            /* width: 22svw; 
+            width: 22svw; 
             height: 70svw;
         }
-    } */
+    } 
 
     & .space-collage {
         position: relative;
@@ -782,7 +792,7 @@ button:hover {
             height: 42.71%;
         }
     }
-}
+}*/
 
 /*
 .space {
