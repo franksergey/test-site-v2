@@ -1116,7 +1116,7 @@ button:hover {
 
         background-image:   url("media/ellipse.svg");
         background-size:    84vw;
-        background-position: 56vw 0;
+        background-position: 66vw 0;
         background-repeat:  no-repeat; 
 
         & .empty {
@@ -1199,6 +1199,20 @@ button:hover {
             flex-direction: row;
             align-items: baseline;
             justify-content: center;
+        }
+    }
+
+    & #sticker-1 {
+        position: absolute;
+        width: 40svw;
+        left: 3svw;
+        margin-top: -19svw;
+        z-index: 2;
+
+        @media  (min-width: 900px)  {  
+            width: 26svw;
+            left: 6svw;
+            margin-top: -5svw;
         }
     }
  
