@@ -614,9 +614,26 @@ button:hover {
     }
 }
 
+.new-format {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80svh;
+
+    background-image: url("media/collage-photo-4.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
 
- .space {  
+    & h2{
+        color: #FC709C;
+        text-align: center;
+        padding: 0 0 10svw;
+    }
+}
+
+.space {  
     position: relative;
 
     @media (min-width: 900px) {   
