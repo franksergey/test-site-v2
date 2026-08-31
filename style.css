@@ -600,6 +600,10 @@ button:hover {
     }
 }
 
+.event-structure {
+    position: relative;
+}
+
 .hgroup-padding {
     padding: 5svw 3svw;
 
@@ -608,29 +612,84 @@ button:hover {
         margin: 8svw 0 0 0;
 
         @media (min-width: 900px) {  
-            width: 40%;
+            width: 48%;
             margin: 3svw 0;  
         }
     }
 }
 
 .new-format {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80svh;
+    position: relative;
+    width: 100%;
+    height: 120svw;
+    overflow: hidden;
 
-    background-image: url("media/collage-photo-4.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-
-    & h2{
-        color: #FC709C;
-        text-align: center;
-        padding: 0 0 10svw;
+    @media (min-width: 900px) {  
+        position: absolute;
+        top: 21svw;
+        left: 25svw;
+        height: 45svw;
     }
+
+    & h3 {
+        font-size: 5.5em;
+        font-variation-settings: "slnt" 0, "wdth" 30;
+
+        @media (min-width: 900px) {  
+            font-size: 8em;
+            font-variation-settings: "slnt" 0, "wdth" 50;
+        }
+    }
+}
+
+.new-format-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+
+    & line {
+        stroke: white;
+        stroke-width: 1.7;
+
+        @media (min-width: 900px) {  
+            stroke-width: 2.2;
+        }
+    }
+}
+
+.new-format-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    margin: 0;
+    padding: 3svw 20svw 8svw;
+    text-align: center;
+    white-space: nowrap;
+    background: radial-gradient(ellipse, #FC709C 40%, transparent 70%);
+
+    @media (min-width: 900px) {  
+        padding: 3svw 5svw 8svw;
+    }
+}
+
+.new-format-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    margin: 0;
+    padding: 0.5em 1em;
+    background: white;
+    color: black;
+    border-radius: 2em;
+    white-space: nowrap;
+    will-change: transform;
+    transform: translate(calc(-50% + var(--tx, 0px)), calc(-50% + var(--ty, 0px)));
 }
 
 .space {  
@@ -1199,37 +1258,70 @@ button:hover {
 }
 
 .face-control {
- margin: 150px 0;
-    & div{
-        text-align: left;
-        flex-direction: column;
-        gap: 1em;
+    position: relative;
+    width: 100%;
+    height: 130svw;
+    margin: 40svw 0 100svw 0;
 
-        display: flex;
-        align-items: center;
-        border: 2px solid;
-        padding: 20px;
-        margin: 40px 20px 0 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
-        @media  (min-width: 900px)  {  
-            margin: 4svw 32svw;
-            flex-direction: row;
-            align-items: baseline;
-            justify-content: center;
-        }
+    & h2 {
+        font-size: 33em;
+        line-height: 73%;
+    }
+
+    & p {
+    }
+
+    & span {
+        font-family: 'Inter', sans-serif;
+        background: black;
+        color: #FC709C;
+        padding: 2px 5px;
+
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
     }
 
     & #sticker-1 {
         position: absolute;
-        width: 40svw;
-        left: 3svw;
-        margin-top: -19svw;
+        top: -2svw;
         z-index: 2;
+
+        text-align: center;
+        margin: 10svw;
+
+        & svg {
+            width: 40svw;
+        }
 
         @media  (min-width: 900px)  {  
             width: 26svw;
             left: 6svw;
-            margin-top: -5svw;
+            /* margin-top: -5svw; */
+        }
+    }
+
+    & #sticker-2 {
+        position: absolute;
+        /* left: auto;
+        right: auto; */
+        top: 94svw;
+        z-index: 2;
+
+        text-align: center;
+        margin: 10svw;
+
+        & svg {
+            width: 40svw;
+        }
+
+        @media  (min-width: 900px)  {  
+            width: 26svw;
+            left: 6svw;
+            /* margin-top: -5svw; */
         }
     }
  
