@@ -167,7 +167,7 @@ body {
 
 }
 
-header {
+/* header {
     width: 100%;
     display: flex;
     position: absolute;
@@ -183,7 +183,7 @@ header {
     @media  (min-width: 900px) {
         padding: 1svw;
     }
-}
+} */
 
 main {
     position: relative;
@@ -420,7 +420,7 @@ button:hover {
     color: white;
 
     @media (min-width: 900px) {  
-        padding: 3svw 3svw 4svw 3svw;
+        padding: 1svw 2svw 4svw 3svw;
     }
 
     
@@ -447,6 +447,46 @@ button:hover {
 
     & .logo {
         width: 8.3em;
+    }
+
+    & header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    & #data {
+        position: relative;
+        top: -5svw;
+        right: 1svw;
+        
+        font-variation-settings: "slnt" 0, "wdth" 28;
+
+        @media (min-width: 900px) { 
+            top: -1svw;
+            right: 0svw; 
+        
+            font-size:  10vw;
+        }
+    }
+
+    & #soon {
+        position: absolute;
+        padding: 1svw 5svw 2svw;
+        right: 5.1svw;
+        top: 13svw;
+        z-index: 2;
+        color: black;
+        background-color: #FC709C;
+        border-radius: 1000px;
+
+        @media (min-width: 900px) {  
+            padding: 0.2svw 1.5svw 0.4svw;
+            right: 2.7svw;
+            top: 4.9svw;
+        }
+
+
     }
 
     & p  {
@@ -1260,47 +1300,68 @@ button:hover {
 .face-control {
     position: relative;
     width: 100%;
-    height: 130svw;
-    margin: 40svw 0 100svw 0;
+    height: 270svw;
+
+    background-color: #ffffff;
 
     display: flex;
     justify-content: center;
     flex-direction: column;
 
-    & h2 {
-        font-size: 33em;
-        line-height: 73%;
+    @media  (min-width: 900px)  {  
+        height: 56svw;
     }
 
-    & p {
+    & h2 {
+        font-size: 130svw;
+        line-height: 106%;
+        font-variation-settings: "slnt" 0, "wdth" 0;
+
+        position: relative;
+        top: -29svw;
+
+        @media  (min-width: 900px)  {  
+            font-size: 70svw;
+            top: -11svw;
+        }
     }
 
     & span {
         font-family: 'Inter', sans-serif;
         background: black;
-        color: #FC709C;
+        color: white;
         padding: 2px 5px;
 
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
     }
 
+    & p {
+        margin: 1svw 0 0 0;
+    }
+
     & #sticker-1 {
         position: absolute;
-        top: -2svw;
+        top: 73svw;
         z-index: 2;
 
         text-align: center;
         margin: 10svw;
 
-        & svg {
-            width: 40svw;
+        @media  (min-width: 900px)  {  
+            top: 12svw;
+            left: 20svw;
+            width: 26svw;
+            margin: 0;
         }
 
-        @media  (min-width: 900px)  {  
-            width: 26svw;
-            left: 6svw;
-            /* margin-top: -5svw; */
+        & svg {
+            width: 40svw;
+            rotate: -3deg;
+
+            @media  (min-width: 900px)  {  
+                width: 19svw;
+            }
         }
     }
 
@@ -1308,20 +1369,26 @@ button:hover {
         position: absolute;
         /* left: auto;
         right: auto; */
-        top: 94svw;
+        top: 208svw;
         z-index: 2;
 
         text-align: center;
         margin: 10svw;
 
-        & svg {
-            width: 40svw;
+        @media  (min-width: 900px)  {  
+            top: 19svw;
+            right: 23svw;
+            width: 26svw;
+            margin: 0;
         }
 
-        @media  (min-width: 900px)  {  
-            width: 26svw;
-            left: 6svw;
-            /* margin-top: -5svw; */
+        & svg {
+            width: 40svw;
+            rotate: 3deg;
+
+            @media  (min-width: 900px)  {  
+                width: 19svw;
+            }
         }
     }
  
@@ -1382,10 +1449,11 @@ button:hover {
 }
 
 .kodex {
+    position: relative;
+    height: 190svw;
     display: flex;
-    height: 160svw;
+    justify-content: center;
     flex-direction: column;
-    padding: 100px 0 80px 0;
 
     background-color:   #ffffff;
     background-image:   url("media/ellipse.svg");
@@ -1405,6 +1473,9 @@ button:hover {
         text-align: center;
         z-index: 1;
 
+        position: relative;
+        top: -20svw;
+
         @media  (min-width: 900px)  {  
             font-size:   18vw;  
         }
@@ -1414,13 +1485,13 @@ button:hover {
         position: absolute;
         width: 40svw;
         left: 3svw;
-        margin-top: -19svw;
+        top: 3svw;
         z-index: 2;
 
         @media  (min-width: 900px)  {  
             width: 26svw;
-            left: 6svw;
-            margin-top: -5svw;
+            left: 13svw;
+            top: 6svw;
         }
     }
 
@@ -1428,14 +1499,15 @@ button:hover {
         position: absolute;
         width: 40svw;
         right: 6svw;
-        align-self: flex-end;    
-        margin-top: 111svw;
+        top: 133svw;
+        /* align-self: flex-end;    
+        margin-top: 111svw; */
         z-index: 0;
 
         @media  (min-width: 900px)  {  
             width: 23svw;
             right: 8svw;
-            margin-top: 24svw;
+            top: 30svw;
         }
     }
 }
@@ -1503,15 +1575,9 @@ button:hover {
     }
 }
 
-
-
-
-
-
-
 .project-history {
     background-color: #ffffff;
-    padding: 35svw 6svw 35svw 6svw;
+    padding: 10svw 6svw 35svw 6svw;
 
     @media  (min-width: 900px)  {  
         padding: 0 0 15svw 0;
