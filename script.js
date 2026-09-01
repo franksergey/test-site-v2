@@ -184,17 +184,23 @@ window.addEventListener("load", () => {
 
     const FLIGHT_DURATION = 700;   // мс, длительность разлёта одной точки
     const STAGGER = 90;            // мс, задержка между появлением тегов
-    const ROTATION_SPEED = 0.5;    // градусов в секунду, скорость вращения всей окружности
+
+    const JITTER_AMPLITUDE = 9;    // px, насколько далеко "дышит" тег от своей точки
+    const JITTER_SPEED_MIN = 0.03; // Гц-подобный множитель, минимальная скорость дыхания
+    const JITTER_SPEED_MAX = 0.10; // максимальная скорость дыхания
 
     const ENTER_THRESHOLD = 0.4;
     const EXIT_THRESHOLD = 0.02;
 
     let lineEls = [];
     let isVisible = false;
-    let rotating = false;
-    let lastRotationTime = null;
-    let rotationOffset = 0;
+    let jittering = false;
+    let jitterStartTime = null;
+    let baseTargets = []; // "родные" позиции тегов без дрожания
     let introTimers = [];
+
+    // индивидуальные случайные параметры дрожания для каждого тега
+    let jitterParams = [];
 
     function buildLines() {
         svg.innerHTML = "";
@@ -205,20 +211,29 @@ window.addEventListener("load", () => {
         });
     }
 
-    function layout(extraOffsetDeg = 0) {
+    function layout() {
         const rect = section.getBoundingClientRect();
         const cx = rect.width / 2;
         const cy = rect.height / 2;
         const base = Math.min(rect.width, rect.height);
 
         return tags.map((tag, i) => {
-            const angle = (customAngles[i] + extraOffsetDeg) * (Math.PI / 180);
+            const angle = customAngles[i] * (Math.PI / 180);
             const radius = base * customRadii[i];
             return {
                 x: cx + radius * Math.cos(angle),
                 y: cy + radius * Math.sin(angle)
             };
         });
+    }
+
+    function randomJitterParams() {
+        return tags.map(() => ({
+            speedX: JITTER_SPEED_MIN + Math.random() * (JITTER_SPEED_MAX - JITTER_SPEED_MIN),
+            speedY: JITTER_SPEED_MIN + Math.random() * (JITTER_SPEED_MAX - JITTER_SPEED_MIN),
+            phaseX: 0,
+            phaseY: Math.PI / 2 // сдвиг X/Y друг относительно друга, чтобы двигались не по прямой линии, а по кривой
+        }));
     }
 
     function applyPositions(targets, useTransition) {
@@ -263,64 +278,78 @@ window.addEventListener("load", () => {
         requestAnimationFrame(updateLines);
     }
 
-    function rotationStep(time) {
-        if (!rotating) return;
+    function jitterStep(time) {
+        if (!jittering) return;
 
-        if (lastRotationTime === null) lastRotationTime = time;
-        const dt = (time - lastRotationTime) / 1000;
-        lastRotationTime = time;
+        if (jitterStartTime === null) jitterStartTime = time;
+        const elapsed = (time - jitterStartTime) / 1000;
 
-        rotationOffset += ROTATION_SPEED * dt;
+        tags.forEach((tag, i) => {
+            const p = jitterParams[i];
+            const dx = Math.sin(elapsed * p.speedX * Math.PI * 2 + p.phaseX) * JITTER_AMPLITUDE;
+            const dy = Math.sin(elapsed * p.speedY * Math.PI * 2 + p.phaseY) * JITTER_AMPLITUDE;
 
-        const targets = layout(rotationOffset);
-        applyPositions(targets, false);
+            const targetX = baseTargets[i].x + dx;
+            const targetY = baseTargets[i].y + dy;
 
-        requestAnimationFrame(rotationStep);
+            // плавно подтягиваем текущую позицию к целевой, а не скачем сразу
+            currentPositions[i].x += (targetX - currentPositions[i].x) * JITTER_SMOOTHING;
+            currentPositions[i].y += (targetY - currentPositions[i].y) * JITTER_SMOOTHING;
+
+            tag.style.transition = "none";
+            tag.style.setProperty("--tx", `${currentPositions[i].x}px`);
+            tag.style.setProperty("--ty", `${currentPositions[i].y}px`);
+        });
+
+        requestAnimationFrame(jitterStep);
+    }
+    
+    function startJitter() {
+        if (jittering) return;
+        jittering = true;
+        jitterStartTime = null;
+        jitterParams = randomJitterParams();
+        currentPositions = baseTargets.map(p => ({ x: p.x, y: p.y }));
+        requestAnimationFrame(jitterStep);
     }
 
-    function startRotation() {
-        if (rotating) return;
-        rotating = true;
-        lastRotationTime = null;
-        requestAnimationFrame(rotationStep);
-    }
-
-    function stopRotation() {
-        rotating = false;
-        lastRotationTime = null;
+    function stopJitter() {
+        jittering = false;
+        jitterStartTime = null;
     }
 
     function playIntro() {
-        stopRotation();
+        stopJitter();
         introTimers.forEach(clearTimeout);
         introTimers = [];
 
-        rotationOffset = 0;
         setCenterPositions();
 
         void section.offsetHeight; // форсируем reflow
 
-        const targets = layout(0);
+        baseTargets = layout();
 
         tags.forEach((tag, i) => {
             const t = setTimeout(() => {
                 tag.style.transition = `transform ${FLIGHT_DURATION}ms cubic-bezier(0.2, 0.8, 0.2, 1)`;
-                tag.style.setProperty("--tx", `${targets[i].x}px`);
-                tag.style.setProperty("--ty", `${targets[i].y}px`);
+                tag.style.setProperty("--tx", `${baseTargets[i].x}px`);
+                tag.style.setProperty("--ty", `${baseTargets[i].y}px`);
             }, i * STAGGER);
             introTimers.push(t);
         });
 
         const maxDelay = (tags.length - 1) * STAGGER + FLIGHT_DURATION;
         const t2 = setTimeout(() => {
-            startRotation();
+            startJitter();
         }, maxDelay);
         introTimers.push(t2);
     }
 
     function resetPositions() {
-        const targets = layout(rotationOffset);
-        applyPositions(targets, false);
+        baseTargets = layout();
+        if (!jittering) {
+            applyPositions(baseTargets, false);
+        }
     }
 
     buildLines();
@@ -336,7 +365,7 @@ window.addEventListener("load", () => {
                 playIntro();
             } else if (ratio <= EXIT_THRESHOLD && isVisible) {
                 isVisible = false;
-                stopRotation();
+                stopJitter();
                 introTimers.forEach(clearTimeout);
                 introTimers = [];
                 setCenterPositions();

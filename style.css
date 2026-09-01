@@ -402,7 +402,6 @@ button:hover {
 }
 
 .cover {
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -457,13 +456,13 @@ button:hover {
 
     & #data {
         position: relative;
-        top: -5svw;
-        right: 1svw;
+        top: 0svw;
+        right: 1.2svw;
         
         font-variation-settings: "slnt" 0, "wdth" 28;
 
         @media (min-width: 900px) { 
-            top: -1svw;
+            top: 0.7svw;
             right: 0svw; 
         
             font-size:  10vw;
@@ -472,21 +471,37 @@ button:hover {
 
     & #soon {
         position: absolute;
-        padding: 1svw 5svw 2svw;
-        right: 5.1svw;
-        top: 13svw;
+        padding: 0.5svw 4svw 1svw;
+        right: 6.1svw;
+        top: 18svw;
+        rotate: -10deg;
         z-index: 2;
         color: black;
         background-color: #FC709C;
-        border-radius: 1000px;
+        /* border-radius: 1000px; */
 
         @media (min-width: 900px) {  
             padding: 0.2svw 1.5svw 0.4svw;
-            right: 2.7svw;
-            top: 4.9svw;
+            right: 2.4svw;
+            top: 6svw;
         }
 
 
+    }
+
+    & #new {
+        position: absolute;
+        top: 2.3svw;
+        right: 1.9svw;
+        font-size: 7vw;
+        letter-spacing: 8.5px;
+        
+        @media (min-width: 900px) { 
+            top: 1.7svw;
+            right: 1.1svw;
+            font-size: 2vw;
+            letter-spacing: 11.7px;
+        }
     }
 
     & p  {
@@ -536,7 +551,6 @@ button:hover {
         }
     } 
 }
-
 
 .client-pain {
     height: 250vh;
@@ -691,7 +705,7 @@ button:hover {
     z-index: 1;
 
     & line {
-        stroke: white;
+        stroke: black;
         stroke-width: 1.7;
 
         @media (min-width: 900px) {  
@@ -710,7 +724,7 @@ button:hover {
     padding: 3svw 20svw 8svw;
     text-align: center;
     white-space: nowrap;
-    background: radial-gradient(ellipse, #FC709C 40%, transparent 70%);
+    background: radial-gradient(ellipse, #FC709C 50%, transparent 70%);
 
     @media (min-width: 900px) {  
         padding: 3svw 5svw 8svw;
@@ -724,9 +738,14 @@ button:hover {
     z-index: 2;
     margin: 0;
     padding: 0.5em 1em;
-    background: white;
+    background: #FC709C;
     color: black;
+
     border-radius: 2em;
+    border-width: 1.7px;
+    border-style: solid;
+    border-color: black;
+
     white-space: nowrap;
     will-change: transform;
     transform: translate(calc(-50% + var(--tx, 0px)), calc(-50% + var(--ty, 0px)));
@@ -801,375 +820,6 @@ button:hover {
         }
     }
 } 
-
-/*
-.space {
-    position: relative;
-
-    background-image:   url("media/ellipse.svg");
-    background-size:    0;
-    background-position: 0;
-    background-repeat:  no-repeat; 
-
-    @media (min-width: 900px) {   
-        padding: 0 0 8svw 0
-    }
-
-    & hgroup {
-        padding: 5svw 0 0  3svw;
-
-        & p {
-            width: 90%;
-            margin: 8svw 0 0 0;
-
-            @media (min-width: 900px) {  
-                width: 40%;
-                margin: 3svw 0;  
-            }
-        }
-    }
-
-    & .space-gallery {
-        overflow-x: auto;
-        overflow-y: hidden;
-        cursor: grab;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-
-
-         scrollbar-width: thin;
-        scrollbar-color: white rgba(255, 255, 255, 0.2); 
-
-        &::-webkit-scrollbar {
-            height: 60px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 30px; 
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background: black;
-            border-radius: 30px; 
-        } 
-
-         &.dragging {
-            cursor: grabbing;
-            scroll-behavior: auto;
-            user-select: none;
-        } 
-    }
-
-    & .space-gallery-track {
-        display: flex;
-        gap: 3svw;
-        width: max-content;
-        padding: 0 3svw 0;
-    }
-
-    
-
-    & .space-photo {
-        flex: 0 0 auto;
-         width: 60svw; 
-        height: 128svw; 
-        object-fit: contain;
-        -webkit-user-drag: none;
-
-        @media (min-width: 900px) {
-            width: 22svw; 
-            height: 70svw;
-        }
-    } 
-
-    & .space-collage {
-        position: relative;
-        height: 128svw; 
-        aspect-ratio: 4892 / 1372;
-        margin: 5svw 0;
-
-        @media (min-width: 900px) {
-            height: 60svw;
-        }
-    }
-
-    & .space-photo {
-        position: absolute;
-        object-fit: cover;
-
-        &.vertical {
-            width: 11.98%;
-            height: 59.48%;
-        }
-
-        &.horizontal {
-            width: 16.68%;
-            height: 42.71%;
-        }
-    }
-}*/
-
-/*
-.space {
-    position: relative;
-
-    @media  (min-width: 900px)  {   
-        padding: 0 0 8svw 0
-    }
-
-    & hgroup {
-        padding: 5svw 3svw;
-
-        & p {
-            width: 90%;
-            margin: 8svw 0;
-
-            @media (min-width: 900px) {  
-                width: 40%;
-                margin: 3svw 0;  
-            }
-        }
-    }
-
-
-    & #collage-ellipse {
-        position: absolute;
-        width: 193svw;
-
-        top: 101svw;
-        left: -95svw;
-
-        z-index: 3;
-
-        @media  (min-width: 900px)  {   
-            width: 114svw;
-
-            top: -39svw;
-            left: -22svw;
-        }
-    }
-
-    & div {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-
-        scrollbar-width: none;
-        overflow-x: auto;
-        overflow-y: hidden;
-        flex-wrap: nowrap;
-    }
-
-    & img {
-        object-fit: cover;
-        /* position: relative; 
-
-        flex-shrink: 0;
-
-
-        width: 60svw;
-        height: 90svw;
-
-        @media  (min-width: 900px)  {   
-            width: 25svw;
-            height: 38svw;
-        }
-    }
-
-    & .images::-webkit-scrollbar {
-        display: none;
-    }
-
-    & #collage-photo-1 {
-        /* width: ;
-        height: ; 
-        position: relative;
-
-        top: -9px;
-        left: -3px;
-
-        @media  (min-width: 900px)  {   
-            /* width: ;
-            height: ;
-
-            top: ;
-            left: ; 
-        }
-    }
-
-    & #collage-photo-2 {
-        /* width: ;
-        height: ;
-
-        top: ;
-        left: ;
-
-        z-index: ; 
-
-        @media  (min-width: 900px)  {   
-            /* width: ;
-            height: ;
-
-            top: ;
-            left: ; 
-        }
-    }
-
-    & #collage-photo-3 {
-        /* width: ;
-        height: ;
-
-        top: ;
-        left: ;
-
-        z-index: ; 
-
-        @media  (min-width: 900px)  {   
-            /* width: ;
-            height: ;
-
-            top: ;
-            left: ; 
-        }
-    }
-
-    & #collage-photo-4 {
-        /* width: ;
-        height: ;
-
-        top: ;
-        left: ;
-
-        z-index: ; 
-
-        @media  (min-width: 900px)  {   
-            /* width: ;
-            height: ;
-
-            top: ;
-            left: ; 
-        }
-    }
-} */
-
-/* .space {
-    position: relative;
-
-    @media  (min-width: 900px)  {   
-        padding: 0 0 8svw 0
-    }
-
-    & hgroup {
-        padding: 5svw 3svw;
-
-        & p {
-            width: 90%;
-            margin: 8svw 0;
-
-            @media (min-width: 900px) {  
-                width: 40%;
-                margin: 3svw 0;  
-            }
-        }
-    }
-
-
-    & #collage-ellipse {
-        position: absolute;
-        width: 193svw;
-
-        top: 101svw;
-        left: -95svw;
-
-        z-index: 3;
-
-        @media  (min-width: 900px)  {   
-            width: 114svw;
-
-            top: -39svw;
-            left: -22svw;
-        }
-    }
-
-    & #collage-photo-1 {
-        width: 60svw;
-        height: 90svw;
-        object-fit: cover;
-
-        position: relative;
-        top: 2svw;
-        left: 20svw;
-
-        @media  (min-width: 900px)  {   
-            width: 25svw;
-            height: 38svw;
-
-            top: 0svw;
-            left: 9svw;
-        }
-    }
-
-    & #collage-photo-2 {
-        width: 48svw;
-        height: 48svw;
-        object-fit: cover;
-
-        position: relative;
-        top: -10svw;
-        left: 2svw;
-
-        z-index: 2;
-
-        @media  (min-width: 900px)  {   
-            width: 20svw;
-            height: 20svw;
-
-            top: -26svw;
-            left: 4svw;
-        }
-    }
-
-    & #collage-photo-3 {
-        width: 60svw;
-        height: 90svw;
-        object-fit: cover;
-
-        position: relative;
-        top: -27svw;
-        left: 31svw;
-
-        z-index: 2;
-
-        @media  (min-width: 900px)  {   
-            width: 25svw;
-            height: 41svw;
-
-            top: -11svw;
-            left: 13svw;
-        }
-    }
-
-    & #collage-photo-4 {
-        width: 74svw;
-        height: 74svw;
-        object-fit: cover;
-
-        position: relative;
-        top: -39svw;
-        left: 5svw;
-
-        z-index: 1;
-
-        @media  (min-width: 900px)  {   
-            width: 22svw;
-            height: 22svw;
-
-            top: 7svw;
-            left: 0svw;
-        }
-    }
-} */
 
 .headliners {  
     display: flex;
@@ -1314,7 +964,7 @@ button:hover {
 
     & h2 {
         font-size: 130svw;
-        line-height: 106%;
+        line-height: 95%;
         font-variation-settings: "slnt" 0, "wdth" 0;
 
         position: relative;
@@ -1342,7 +992,7 @@ button:hover {
 
     & #sticker-1 {
         position: absolute;
-        top: 73svw;
+        top: 106svw;
         z-index: 2;
 
         text-align: center;
@@ -1367,9 +1017,7 @@ button:hover {
 
     & #sticker-2 {
         position: absolute;
-        /* left: auto;
-        right: auto; */
-        top: 208svw;
+        top: 204svw;
         z-index: 2;
 
         text-align: center;
