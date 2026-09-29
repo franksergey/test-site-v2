@@ -357,15 +357,17 @@ footer {
 
 
 .button-sticky {
-    position:   fixed;
-    width:      88svw;
-    bottom:     0;
-    color:    white;
-    background-color: black;
+    position: fixed;
+    display: flex;
+    align-items: baseline;
+    width: 88svw;
+    bottom: 0;
+    /* color:    white;
+    background-color: black; */
     margin:     3svw    6svw;
     z-index:    3;
 
-    padding: 2em 20px;
+    /* padding: 2em 20px; */
 
     transform:  translateY(120px);
     opacity:    0;
@@ -373,7 +375,8 @@ footer {
     transition: transform 0.5s ease, opacity 0.5s ease;
 
     @media  (min-width: 900px)  {
-        width:  fit-content;
+        /* width:  fit-content; */
+        flex-direction: row-reverse;
         top:    2svw;
         right:  2svw;
         bottom: auto;
@@ -382,6 +385,30 @@ footer {
         font-size:  1.5em;
 
         transform: translateY(-120px);
+    }
+
+    & .button-tickets {
+        width: 100%;
+        padding: 0.8em 0;
+        border-radius: 2em;
+        color: white;
+        /* border: solid 1.5px black; */
+        /* width: fit-content; */
+        background-color: black;
+
+        @media  (min-width: 900px)  {
+            width: fit-content;
+            padding: 0.8svw 1em;
+        }
+    }
+
+    & a {
+        text-align: center;
+        text-decoration: none;
+        background-color: transparent; 
+        border: none; 
+        color: black; 
+        padding: 0.8em 1.5em;
     }
 }
 
@@ -582,6 +609,39 @@ button:hover {
             display: block; 
         }
     } 
+
+    & .button-nav {
+        font-size: 1.1em;
+
+        @media  (min-width: 900px)  {
+            font-size: 1.3em;
+        }
+
+        display: flex;
+        align-items: baseline;
+        width: fit-content;
+
+        & .button-tickets {
+            padding: 0.8em 2em;
+            border-radius: 2em;
+            background-color: black;
+
+            @media  (min-width: 900px)  {
+                padding: 0.8svw 2em;
+            }
+        }
+
+
+        & a {
+            text-align: center;
+            text-decoration: none;
+            background-color: transparent; 
+            border: none; 
+            color: white;
+            /* color: black;  */
+            padding: 0.8em 1.5em;
+        }
+    }
 }
 
 .client-pain {
@@ -954,7 +1014,7 @@ button:hover {
     font-size: 1.1em;
     position: relative;
     width: calc((100% - var(--gap-number) * var(--gap)) / (var(--columns)));
-    padding: 0.5em 3em;
+    padding: 0.5em 2em;
 
     transition: background-color 0.5s ease, text-decoration-color 0.5s ease;
 
