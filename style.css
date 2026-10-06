@@ -1161,7 +1161,7 @@ button:hover {
     color: #FC709C;
     background-color: black;
     border-radius: 10em;
-    padding: 0.05em 0.9em 0.1em;
+    padding: 0.3em 0.9em 0.3em;
 
     @media  (min-width: 900px)  {  
         /* left: 1.5em;
@@ -1175,6 +1175,15 @@ button:hover {
   & .tickets-none-border {
     border-radius: 0;
     border-bottom: 0;
+    border: 0;
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+
+    & .time {
+        background-color: #FC709C;
+        color: black;
+        border: 0;
+    }
   }
 
   & .tickets-ritm-130 {
